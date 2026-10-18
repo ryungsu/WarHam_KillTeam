@@ -14741,6 +14741,2888 @@
   },
   {
     "factionId": "IMP",
+    "killteamId": "IMP-DW",
+    "killteamName": "Deathwatch",
+    "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+    "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+    "archetypes": "Seek And Destroy/Security",
+    "defaultRosterId": null,
+    "defaultRoster": null,
+    "userId": null,
+    "isPublished": true,
+    "isHomebrew": false,
+    "rosterCount": 0,
+    "opTypes": [
+      {
+        "opTypeId": "IMP-DW-SGT",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "opTypeName": "Watch Sergeant",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, LEADER, WATCH SERGEANT",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-SGT-PP",
+            "opTypeId": "IMP-DW-SGT",
+            "seq": 1,
+            "wepName": "Plasma Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-SGT-PP-01",
+                "wepId": "IMP-DW-SGT-PP",
+                "seq": 1,
+                "profileName": "Standard",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/5",
+                "WR": "Rng 8\", Prc1"
+              },
+              {
+                "wepprofileId": "IMP-DW-SGT-PP-02",
+                "wepId": "IMP-DW-SGT-PP",
+                "seq": 2,
+                "profileName": "Supercharge",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "Rng 8\", Hot, Lethal 5+, Prc1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-SGT-PW",
+            "opTypeId": "IMP-DW-SGT",
+            "seq": 2,
+            "wepName": "Power Weapon",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-SGT-PW-01",
+                "wepId": "IMP-DW-SGT-PW",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/6",
+                "WR": "Lethal 5+"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-SGT-AA",
+            "opTypeId": "IMP-DW-SGT",
+            "abilityName": "Adaptable Armoury",
+            "AP": null,
+            "description": "You can select one additional equipment option.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-SGT-SIA",
+            "opTypeId": "IMP-DW-SGT",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-SGT-SC",
+            "opTypeId": "IMP-DW-SGT",
+            "abilityName": "Strategic Command",
+            "AP": null,
+            "description": "You can do each of the following once per battle if this operative is in the killzone:\n- Use a DEATHWATCH strategy ploy for 0CP.\n- Use a DEATHWATCH firefight ploy for 0CP.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-SGT-VAS",
+            "opTypeId": "IMP-DW-SGT",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Watch Sergeant",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-AEG",
+        "killteamId": "IMP-DW",
+        "seq": 2,
+        "opTypeName": "Aegis",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "2+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, AEGIS",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-AEG-BP",
+            "opTypeId": "IMP-DW-AEG",
+            "seq": 1,
+            "wepName": "Bolt Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-AEG-BP-01",
+                "wepId": "IMP-DW-AEG-BP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-AEG-PMSS",
+            "opTypeId": "IMP-DW-AEG",
+            "seq": 2,
+            "wepName": "Power Maul & Storm Shield",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-AEG-PMSS-01",
+                "wepId": "IMP-DW-AEG-PMSS",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/6",
+                "WR": "Shock, *Shield"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-AEG-SH",
+            "opTypeId": "IMP-DW-AEG",
+            "abilityName": "*Shield",
+            "AP": null,
+            "description": "Whenever this operative is fighting or retaliating with this weapon, each of your blocks can be allocated to block two unresolved successes (instead of one).",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-AEG-SIA",
+            "opTypeId": "IMP-DW-AEG",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-AEG-SS",
+            "opTypeId": "IMP-DW-AEG",
+            "abilityName": "Storm Shield",
+            "AP": null,
+            "description": "Whenever an operative is shooting this operative, worsen the x of the Piercing weapon rule by 1 (if any). Note that Piercing 1 would therefore be ignored.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-AEG-VAS",
+            "opTypeId": "IMP-DW-AEG",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Aegis",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-BLM",
+        "killteamId": "IMP-DW",
+        "seq": 3,
+        "opTypeName": "Blademaster",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, BLADEMASTER",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-BLM-SIBP",
+            "opTypeId": "IMP-DW-BLM",
+            "seq": 1,
+            "wepName": "Special Issue Bolt Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BLM-SIBP-01",
+                "wepId": "IMP-DW-BLM-SIBP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\", Prc1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BLM-XPB",
+            "opTypeId": "IMP-DW-BLM",
+            "seq": 2,
+            "wepName": "Xenophase Blade",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BLM-XPB-01",
+                "wepId": "IMP-DW-BLM-XPB",
+                "seq": 1,
+                "profileName": "Duel",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/6",
+                "WR": "Brutal, Lethal 5+"
+              },
+              {
+                "wepprofileId": "IMP-DW-BLM-XPB-02",
+                "wepId": "IMP-DW-BLM-XPB",
+                "seq": 2,
+                "profileName": "Phase Sweep",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "4/6",
+                "WR": "Brutal, Lethal 5+, *Phase Sweep"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-BLM-PS",
+            "opTypeId": "IMP-DW-BLM",
+            "abilityName": "*Phase Sweep",
+            "AP": null,
+            "description": "Whenever this operative performs the Fight action with this weapon profile, if it isn't incapacitated, it can immediately perform a free Fight action afterwards, but you must select this weapon profile and it can only fight against each enemy operative within its control range once per activation or counteraction using this weapon profile.\nThis takes precedence over action restrictions, and you can continue to perform free Fight actions until this operative is incapacitated or has fought against every enemy operative within its control range.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-BLM-AS",
+            "opTypeId": "IMP-DW-BLM",
+            "abilityName": "Adaptive Swordsmanship",
+            "AP": null,
+            "description": "You can ignore any changes to the Hit stat of this operative’s Xenophase blade. Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order. If you do, that success must be used to block.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-BLM-SIA",
+            "opTypeId": "IMP-DW-BLM",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-BLM-VAS",
+            "opTypeId": "IMP-DW-BLM",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Blademaster",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-BOM",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "opTypeName": "Bombard",
+        "MOVE": "5\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 18,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, BOMBARD",
+        "basesize": 40,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-BOM-BP",
+            "opTypeId": "IMP-DW-BOM",
+            "seq": 1,
+            "wepName": "Bolt Pistol",
+            "wepType": "R",
+            "isDefault": false,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BOM-BP-01",
+                "wepId": "IMP-DW-BOM-BP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BOM-FC",
+            "opTypeId": "IMP-DW-BOM",
+            "seq": 2,
+            "wepName": "Frag Cannon",
+            "wepType": "R",
+            "isDefault": false,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BOM-FC-01",
+                "wepId": "IMP-DW-BOM-FC",
+                "seq": 1,
+                "profileName": "Shell",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "5/7",
+                "WR": "Prc1"
+              },
+              {
+                "wepprofileId": "IMP-DW-BOM-FC-02",
+                "wepId": "IMP-DW-BOM-FC",
+                "seq": 2,
+                "profileName": "Shrapnel",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "Tor 2\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BOM-F",
+            "opTypeId": "IMP-DW-BOM",
+            "seq": 3,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BOM-F-01",
+                "wepId": "IMP-DW-BOM-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-BOM-SIA",
+            "opTypeId": "IMP-DW-BOM",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-BOM-VAS",
+            "opTypeId": "IMP-DW-BOM",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 18,
+        "opName": "Bombard",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-BRC",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "opTypeName": "Breacher",
+        "MOVE": "5\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 18,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, BREACHER",
+        "basesize": 40,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-BRC-AGL",
+            "opTypeId": "IMP-DW-BRC",
+            "seq": 1,
+            "wepName": "Auxiliary Grenade Launcher",
+            "wepType": "R",
+            "isDefault": false,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BRC-AGL-01",
+                "wepId": "IMP-DW-BRC-AGL",
+                "seq": 1,
+                "profileName": "Frag",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "2/4",
+                "WR": "Blast 2\""
+              },
+              {
+                "wepprofileId": "IMP-DW-BRC-AGL-02",
+                "wepId": "IMP-DW-BRC-AGL",
+                "seq": 2,
+                "profileName": "Krak",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "Prc1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BRC-HSBR",
+            "opTypeId": "IMP-DW-BRC",
+            "seq": 2,
+            "wepName": "Hellstorm Bolt Rifle",
+            "wepType": "R",
+            "isDefault": false,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BRC-HSBR-01",
+                "wepId": "IMP-DW-BRC-HSBR",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "Tor 1\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BRC-MB",
+            "opTypeId": "IMP-DW-BRC",
+            "seq": 3,
+            "wepName": "Melta Bomb",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BRC-MB-01",
+                "wepId": "IMP-DW-BRC-MB",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "5/3",
+                "WR": "Rng 3\", Dev3, Hvy(Repos), Lim1, Prc2"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-BRC-F",
+            "opTypeId": "IMP-DW-BRC",
+            "seq": 4,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-BRC-F-01",
+                "wepId": "IMP-DW-BRC-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-BRC-SIA",
+            "opTypeId": "IMP-DW-BRC",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-BRC-VAS",
+            "opTypeId": "IMP-DW-BRC",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 18,
+        "opName": "Breacher",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-DEM",
+        "killteamId": "IMP-DW",
+        "seq": 6,
+        "opTypeName": "Demolisher",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, DEMOLISHER",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-DEM-BP",
+            "opTypeId": "IMP-DW-DEM",
+            "seq": 1,
+            "wepName": "Bolt Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-DEM-BP-01",
+                "wepId": "IMP-DW-DEM-BP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-DEM-HTH",
+            "opTypeId": "IMP-DW-DEM",
+            "seq": 2,
+            "wepName": "Heavy Thunder Hammer",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-DEM-HTH-01",
+                "wepId": "IMP-DW-DEM-HTH",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "5",
+                "HIT": "4+",
+                "DMG": "6/7",
+                "WR": "Shock, Stun"
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-DEM-AF",
+            "opTypeId": "IMP-DW-DEM",
+            "abilityName": "Aggressive Force",
+            "AP": null,
+            "description": "Whenever this operative is fighting or retaliating, Normal and Critical Dmg of 3 or more inflicts 1 less damage on it. This is not cumulative with the Shield that Slays strategy ploy.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-DEM-BA",
+            "opTypeId": "IMP-DW-DEM",
+            "abilityName": "Brutal Assault",
+            "AP": null,
+            "description": "Whenever this operative is fighting, its heavy thunder hammer has the Brutal weapon rule. Whenever this operative performs the Charge action, its heavy thunder hammer has the Ceaseless weapon rule until the end of the activation/counteraction.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-DEM-SIA",
+            "opTypeId": "IMP-DW-DEM",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-DEM-VAS",
+            "opTypeId": "IMP-DW-DEM",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Demolisher",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-DIS",
+        "killteamId": "IMP-DW",
+        "seq": 7,
+        "opTypeName": "Disruptor",
+        "MOVE": "7\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 13,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, DISRUPTOR",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-DIS-MBC",
+            "opTypeId": "IMP-DW-DIS",
+            "seq": 1,
+            "wepName": "Marksman Bolt Carbine",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-DIS-MBC-01",
+                "wepId": "IMP-DW-DIS-MBC",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Lethal 5+"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-DIS-F",
+            "opTypeId": "IMP-DW-DIS",
+            "seq": 2,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-DIS-F-01",
+                "wepId": "IMP-DW-DIS-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-DIS-AOS",
+            "opTypeId": "IMP-DW-DIS",
+            "abilityName": "Advanced Omni-Scrambler",
+            "AP": null,
+            "description": "STRATEGIC GAMBIT.\nSelect one enemy operative visible to or within 6\" of this operative, then roll one D6. In the following Firefight phase, that enemy operative cannot be activated or perform actions until one of the following is true:\n- Your opponent has activated a number of enemy operatives equal to the result of the D6.\n- It’s the last enemy operative to be activated.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-DIS-AT",
+            "opTypeId": "IMP-DW-DIS",
+            "abilityName": "Auspex Triangulation",
+            "AP": null,
+            "description": "The Advanced Auspex Scan firefight ploy costs you 0CP when both of the following are true:\r - This operative isn’t within control range of enemy operatives.\r - The target of that Shoot action (primary target, if relevant) is visible to this operative.\r \r Note that it doesn’t have to be this operative performing the Shoot action, and that any subsequent Shoot actions during that activation/counteraction must meet these same requirements (or that ploy has no effect on those subsequent Shoot actions).",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-DIS-SIA",
+            "opTypeId": "IMP-DW-DIS",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-DIS-VAS",
+            "opTypeId": "IMP-DW-DIS",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 13,
+        "opName": "Disruptor",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-GNR",
+        "killteamId": "IMP-DW",
+        "seq": 8,
+        "opTypeName": "Gunner",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GUNNER",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-GNR-BP",
+            "opTypeId": "IMP-DW-GNR",
+            "seq": 1,
+            "wepName": "Bolt Pistol",
+            "wepType": "R",
+            "isDefault": false,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-GNR-BP-01",
+                "wepId": "IMP-DW-GNR-BP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-GNR-HPI",
+            "opTypeId": "IMP-DW-GNR",
+            "seq": 2,
+            "wepName": "Heavy Plasma Incinerator",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-GNR-HPI-01",
+                "wepId": "IMP-DW-GNR-HPI",
+                "seq": 1,
+                "profileName": "Standard",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/6",
+                "WR": "Prc1"
+              },
+              {
+                "wepprofileId": "IMP-DW-GNR-HPI-02",
+                "wepId": "IMP-DW-GNR-HPI",
+                "seq": 2,
+                "profileName": "Supercharge",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "5/6",
+                "WR": "Hot, Lethal 5+, Prc1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-GNR-F",
+            "opTypeId": "IMP-DW-GNR",
+            "seq": 3,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-GNR-F-01",
+                "wepId": "IMP-DW-GNR-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-GNR-SIA",
+            "opTypeId": "IMP-DW-GNR",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-GNR-VAS",
+            "opTypeId": "IMP-DW-GNR",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Gunner",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-HTK",
+        "killteamId": "IMP-DW",
+        "seq": 9,
+        "opTypeName": "Headtaker",
+        "MOVE": "7\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 13,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, HEADTAKER",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-HTK-SIBP",
+            "opTypeId": "IMP-DW-HTK",
+            "seq": 1,
+            "wepName": "Special Issue Bolt Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-HTK-SIBP-01",
+                "wepId": "IMP-DW-HTK-SIBP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\", Prc1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-HTK-CK",
+            "opTypeId": "IMP-DW-HTK",
+            "seq": 2,
+            "wepName": "Combat Knives",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-HTK-CK-01",
+                "wepId": "IMP-DW-HTK-CK",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-HTK-CHT",
+            "opTypeId": "IMP-DW-HTK",
+            "abilityName": "Clandestine Headtaker",
+            "AP": null,
+            "description": "This operative can perform the Charge action while it has a Conceal order. Whenever this operative is fighting against an operative it wasn’t visible to at the start of the activation/counteraction, the first time you strike during that sequence, you can immediately resolve another of your successes as a strike (before your opponent).",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-HTK-GCGL",
+            "opTypeId": "IMP-DW-HTK",
+            "abilityName": "Grav-chute and Grapnel Launcher",
+            "AP": null,
+            "description": "Whenever this operative is climbing, treat the vertical distance as 2\" (regardless of how far the operative actually moves vertically). Whenever this operative is dropping, ignore the vertical distance.",
+            "isFactionRule": false
+          },
+          {
+            "abilityId": "IMP-DW-HTK-SIA",
+            "opTypeId": "IMP-DW-HTK",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-HTK-VAS",
+            "opTypeId": "IMP-DW-HTK",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 13,
+        "opName": "Headtaker",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-HSL",
+        "killteamId": "IMP-DW",
+        "seq": 10,
+        "opTypeName": "Horde-Slayer",
+        "MOVE": "5\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 18,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, HORDE-SLAYER",
+        "basesize": 40,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-HSL-BP",
+            "opTypeId": "IMP-DW-HSL",
+            "seq": 1,
+            "wepName": "Bolt Pistol",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-HSL-BP-01",
+                "wepId": "IMP-DW-HSL-BP",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": "Rng 8\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-HSL-IHB",
+            "opTypeId": "IMP-DW-HSL",
+            "seq": 2,
+            "wepName": "Infernus Heavy Bolter",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-HSL-IHB-01",
+                "wepId": "IMP-DW-HSL-IHB",
+                "seq": 1,
+                "profileName": "Flame",
+                "ATK": "5",
+                "HIT": "2+",
+                "DMG": "3/3",
+                "WR": "Rng 8\", Sat, Tor2\""
+              },
+              {
+                "wepprofileId": "IMP-DW-HSL-IHB-02",
+                "wepId": "IMP-DW-HSL-IHB",
+                "seq": 2,
+                "profileName": "Focused Bolt",
+                "ATK": "5",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "PrcCrit1"
+              },
+              {
+                "wepprofileId": "IMP-DW-HSL-IHB-03",
+                "wepId": "IMP-DW-HSL-IHB",
+                "seq": 3,
+                "profileName": "Sweeping Bolt",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "4/5",
+                "WR": "PrcCrit1, Tor1\""
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-HSL-F",
+            "opTypeId": "IMP-DW-HSL",
+            "seq": 3,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-HSL-F-01",
+                "wepId": "IMP-DW-HSL-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-HSL-SIA",
+            "opTypeId": "IMP-DW-HSL",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-HSL-VAS",
+            "opTypeId": "IMP-DW-HSL",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 18,
+        "opName": "Horde-Slayer",
+        "opType": null,
+        "opId": null
+      },
+      {
+        "opTypeId": "IMP-DW-MRK",
+        "killteamId": "IMP-DW",
+        "seq": 11,
+        "opTypeName": "Marksman",
+        "MOVE": "6\"",
+        "APL": 3,
+        "SAVE": "3+",
+        "WOUNDS": 15,
+        "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, MARKSMAN",
+        "basesize": 32,
+        "nameType": "CORVIUS",
+        "isOpType": true,
+        "weapons": [
+          {
+            "wepId": "IMP-DW-MRK-SBR",
+            "opTypeId": "IMP-DW-MRK",
+            "seq": 1,
+            "wepName": "Stalker Bolt Rifle",
+            "wepType": "R",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-MRK-SBR-01",
+                "wepId": "IMP-DW-MRK-SBR",
+                "seq": 1,
+                "profileName": "Mobile",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              },
+              {
+                "wepprofileId": "IMP-DW-MRK-SBR-02",
+                "wepId": "IMP-DW-MRK-SBR",
+                "seq": 2,
+                "profileName": "Heavy",
+                "ATK": "4",
+                "HIT": "2+",
+                "DMG": "3/5",
+                "WR": "Hvy(Dash), Lethal 5+, PrcCrit 1"
+              }
+            ]
+          },
+          {
+            "wepId": "IMP-DW-MRK-F",
+            "opTypeId": "IMP-DW-MRK",
+            "seq": 2,
+            "wepName": "Fists",
+            "wepType": "M",
+            "isDefault": true,
+            "profiles": [
+              {
+                "wepprofileId": "IMP-DW-MRK-F-01",
+                "wepId": "IMP-DW-MRK-F",
+                "seq": 1,
+                "profileName": "",
+                "ATK": "4",
+                "HIT": "3+",
+                "DMG": "3/4",
+                "WR": ""
+              }
+            ]
+          }
+        ],
+        "abilities": [
+          {
+            "abilityId": "IMP-DW-MRK-SIA",
+            "opTypeId": "IMP-DW-MRK",
+            "abilityName": "Special Issue Ammunition",
+            "AP": null,
+            "description": "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative’s ranged weapons to have until the end of the action.\nThis rule cannot be used with explosive grenades (see universal equipment) or melta bombs.\n\n- Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-MRK-VAS",
+            "opTypeId": "IMP-DW-MRK",
+            "abilityName": "Veteran Astartes",
+            "AP": null,
+            "description": "During each friendly DEATHWATCH operative’s activation, it can perform either two Shoot actions or two Fight actions.\nIf it’s two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.\n\nEach friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction.",
+            "isFactionRule": true
+          },
+          {
+            "abilityId": "IMP-DW-MRK-VIG",
+            "opTypeId": "IMP-DW-MRK",
+            "abilityName": "Vigilant Marksman",
+            "AP": null,
+            "description": "This operative can perform the Guard action during its activation regardless of the killzone (see close quarters rules, Kill Team: Tomb World).\nWhen using the close quarters rules, once per turning point, after this operative performs a free Shoot action on guard, it can immediately perform a free Guard action.\nHowever, if it does, it cannot counteract (nor Guard twice if it’s counteracted).",
+            "isFactionRule": false
+          }
+        ],
+        "options": [],
+        "isActivated": false,
+        "currWOUNDS": 15,
+        "opName": "Marksman",
+        "opType": null,
+        "opId": null
+      }
+    ],
+    "ploys": [
+      {
+        "ployId": "IMP-DW-S-MT",
+        "killteamId": "IMP-DW",
+        "ployType": "S",
+        "seq": 1,
+        "ployName": "Mission Tactics",
+        "description": "Select Conceal or Engage. Whenever a friendly DEATHWATCH operative is shooting against or fighting against an enemy operative that has that order, that friendly operative’s weapons have the Balanced weapon rule."
+      },
+      {
+        "ployId": "IMP-DW-S-TLV",
+        "killteamId": "IMP-DW",
+        "ployType": "S",
+        "seq": 2,
+        "ployName": "The Long Vigil",
+        "description": "Whenever an operative is shooting a friendly DEATHWATCH operative that’s wholly within your territory, you can re-roll one of your defence dice."
+      },
+      {
+        "ployId": "IMP-DW-S-TSTS",
+        "killteamId": "IMP-DW",
+        "ployType": "S",
+        "seq": 3,
+        "ployName": "The Shield That Slays",
+        "description": "Whenever a friendly DEATHWATCH operative is wholly within your opponent’s territory, Normal Dmg of 4 or more inflicts 1 less damage on it."
+      },
+      {
+        "ployId": "IMP-DW-S-ATSKNF",
+        "killteamId": "IMP-DW",
+        "ployType": "S",
+        "seq": 4,
+        "ployName": "And They Shall Know No Fear",
+        "description": "You can ignore any changes to the stats of friendly DEATHWATCH operatives from being injured (including their weapons’ stats)."
+      },
+      {
+        "ployId": "IMP-DW-T-SNTA",
+        "killteamId": "IMP-DW",
+        "ployType": "T",
+        "seq": 5,
+        "ployName": "Suffer Not The Alien",
+        "description": "Use this firefight ploy after rolling your attack dice for a friendly DEATHWATCH operative, if it’s shooting against or fighting against an operative that doesn’t have the CHAOS or IMPERIUM keyword. You can re-roll any of your attack dice."
+      },
+      {
+        "ployId": "IMP-DW-T-AT",
+        "killteamId": "IMP-DW",
+        "ployType": "T",
+        "seq": 6,
+        "ployName": "Auspicator Tracking",
+        "description": "Use this firefight ploy when a friendly DEATHWATCH operative is counteracting, before it performs any actions. You can change its order."
+      },
+      {
+        "ployId": "IMP-DW-T-AAS",
+        "killteamId": "IMP-DW",
+        "ployType": "T",
+        "seq": 7,
+        "ployName": "Advanced Auspex Scan",
+        "description": "Use this firefight ploy when a friendly DEATHWATCH operative performs the Shoot action. Until the end of the activation/counteraction, its ranged weapons have the Saturate weapon rule and enemy operatives cannot be obscured."
+      },
+      {
+        "ployId": "IMP-DW-T-THP",
+        "killteamId": "IMP-DW",
+        "ployType": "T",
+        "seq": 8,
+        "ployName": "Transhuman Physiology",
+        "description": "Use this firefight ploy when an operative is shooting a friendly DEATHWATCH operative, in the Roll Defence Dice step. You can retain one of your normal successes as a critical success instead."
+      }
+    ],
+    "spotlightRosters": [
+      {
+        "rosterId": "LDWn4fVjWJ",
+        "userId": "1Qyl9",
+        "killteamId": "IMP-DW",
+        "seq": 13,
+        "rosterName": "The DEATHWATCH Firstborn",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 858,
+        "importCount": 8,
+        "createdAt": "2025-09-10T21:44:53.138Z",
+        "updatedAt": "2026-05-31T03:43:18.478Z",
+        "portraitUpdatedAt": "2025-09-11T01:19:29.799Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "1Qyl9",
+          "email": "",
+          "userName": "Elephantbat",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "4NKWqkJacR",
+        "userId": "4ryNw",
+        "killteamId": "IMP-DW",
+        "seq": 16,
+        "rosterName": "KT Dumah & Bronto ",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 1385,
+        "importCount": 3,
+        "createdAt": "2025-09-23T16:25:55.533Z",
+        "updatedAt": "2026-05-31T14:34:15.668Z",
+        "portraitUpdatedAt": "2025-11-06T15:23:19.390Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "4ryNw",
+          "email": "",
+          "userName": "ChapterhouseDude",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "BvMZd7pb4t",
+        "userId": "5QrR7",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "rosterName": "Grey knights(Deathwatch proxy)",
+        "description": "This is not meant to be a serious team, more of an experiment to see how many team I can build off of the models I have. part 1.\n\nthe grey knight take the place of deathwatch.",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 415,
+        "importCount": 0,
+        "createdAt": "2026-01-17T21:52:07.558Z",
+        "updatedAt": "2026-05-31T04:11:54.488Z",
+        "portraitUpdatedAt": "2026-01-17T22:05:21.639Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "5QrR7",
+          "email": "",
+          "userName": "Grimhawk90",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "XBbHT8sNY8",
+        "userId": "61gCB",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "rosterName": "Inquisition Watch Station Alpha Epsilon Detachment",
+        "description": "[W]  2.12.26 14 to 10 vs Hand of Archon tomb world 5 (Loot)",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 294,
+        "importCount": 0,
+        "createdAt": "2025-12-11T18:56:38.091Z",
+        "updatedAt": "2026-05-31T02:41:53.778Z",
+        "portraitUpdatedAt": "2026-02-13T04:40:08.348Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-AR,IMP-DW-SST,IMP-DW-SVBSC,UNIVERSAL-UE-XG-FRAG",
+        "ployIds": "",
+        "user": {
+          "userId": "61gCB",
+          "email": "",
+          "userName": "CorvusRex",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "YXH7KjXGE7",
+        "userId": "6t6n0",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Kill Team Adriel",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 440,
+        "importCount": 0,
+        "createdAt": "2025-09-21T10:00:49.865Z",
+        "updatedAt": "2026-05-31T13:18:17.557Z",
+        "portraitUpdatedAt": "2026-04-04T11:43:56.466Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-LB",
+        "ployIds": "",
+        "user": {
+          "userId": "6t6n0",
+          "email": "",
+          "userName": "compiler",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "vPTf32W7aT",
+        "userId": "7RRsvNcrF5",
+        "killteamId": "IMP-DW",
+        "seq": 2,
+        "rosterName": "DeffWAAAGH!!! ",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 49,
+        "importCount": 0,
+        "createdAt": "2026-05-24T07:22:50.988Z",
+        "updatedAt": "2026-05-31T10:30:29.277Z",
+        "portraitUpdatedAt": "2026-05-30T17:01:40.609Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-AC,UNIVERSAL-UE-LAD",
+        "ployIds": "",
+        "user": {
+          "userId": "7RRsvNcrF5",
+          "email": null,
+          "userName": "TheSeeker",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "L4TfXwgCSN",
+        "userId": "841IN",
+        "killteamId": "IMP-DW",
+        "seq": 2,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 304,
+        "importCount": 0,
+        "createdAt": "2026-02-09T22:27:00.848Z",
+        "updatedAt": "2026-05-31T04:09:59.405Z",
+        "portraitUpdatedAt": "2026-02-09T22:54:09.493Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "841IN",
+          "email": "",
+          "userName": "Carlo",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "MXXFUzhEBc",
+        "userId": "afkDy",
+        "killteamId": "IMP-DW",
+        "seq": 3,
+        "rosterName": "Kill Team Nixos",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 695,
+        "importCount": 0,
+        "createdAt": "2025-09-12T10:57:09.446Z",
+        "updatedAt": "2026-05-31T03:47:19.427Z",
+        "portraitUpdatedAt": "2025-09-24T20:11:04.605Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-UG-SMK,UNIVERSAL-UE-LB,UNIVERSAL-UE-LAD",
+        "ployIds": "",
+        "user": {
+          "userId": "afkDy",
+          "email": "",
+          "userName": "McNixo",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "E5XAAQYCAC",
+        "userId": "B8bXspPyCc",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 128,
+        "importCount": 0,
+        "createdAt": "2026-04-20T02:54:37.730Z",
+        "updatedAt": "2026-05-31T03:57:07.545Z",
+        "portraitUpdatedAt": "2026-04-20T03:29:50.161Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "B8bXspPyCc",
+          "email": null,
+          "userName": "Bareak",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "cS4QVsvTPG",
+        "userId": "CHDVX7cGQx",
+        "killteamId": "IMP-DW",
+        "seq": 8,
+        "rosterName": "Deathwatch",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 287,
+        "importCount": 0,
+        "createdAt": "2025-09-26T00:49:58.908Z",
+        "updatedAt": "2026-05-31T03:46:42.847Z",
+        "portraitUpdatedAt": "2026-05-15T03:52:24.508Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "CHDVX7cGQx",
+          "email": null,
+          "userName": "yutoutlaws",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "6AZ5Dg87rv",
+        "userId": "D6dEPGJy9S",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "rosterName": "Death Templars ",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 346,
+        "importCount": 0,
+        "createdAt": "2025-11-02T18:33:05.015Z",
+        "updatedAt": "2026-05-31T04:11:01.491Z",
+        "portraitUpdatedAt": "2026-02-13T21:27:20.299Z",
+        "turn": 2,
+        "VP": 1,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-DW,IMP-DW-AR",
+        "ployIds": "IMP-DW-S-TSTS,IMP-DW-T-SNTA",
+        "user": {
+          "userId": "D6dEPGJy9S",
+          "email": null,
+          "userName": "rakiet",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "B5ujTNL49F",
+        "userId": "Dg1u6",
+        "killteamId": "IMP-DW",
+        "seq": 11,
+        "rosterName": "Death Witches",
+        "description": "Techo-Barbarian Gladiazons come to rid their world of invaders",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 1044,
+        "importCount": 1,
+        "createdAt": "2025-09-18T20:01:08.471Z",
+        "updatedAt": "2026-05-31T08:09:37.426Z",
+        "portraitUpdatedAt": "2025-09-18T20:03:25.359Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "Dg1u6",
+          "email": "",
+          "userName": "Mcnancy",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "CxLPn57pQS",
+        "userId": "een3H",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "rosterName": "Steel combatants veterans",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 551,
+        "importCount": 3,
+        "createdAt": "2025-09-11T09:21:55.755Z",
+        "updatedAt": "2026-05-31T02:48:58.182Z",
+        "portraitUpdatedAt": "2025-10-24T17:46:03.600Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-AR,UNIVERSAL-UE-LB,IMP-DW-SVBSC,IMP-DW-DW",
+        "ployIds": "",
+        "user": {
+          "userId": "een3H",
+          "email": "",
+          "userName": "Kra3r",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "kBgVr88UR3",
+        "userId": "Eknnv",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 704,
+        "importCount": 0,
+        "createdAt": "2025-10-25T21:37:38.550Z",
+        "updatedAt": "2026-05-31T04:17:29.027Z",
+        "portraitUpdatedAt": "2025-10-25T21:51:27.205Z",
+        "turn": 4,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SVBSC,UNIVERSAL-UE-LB,UNIVERSAL-UE-RW,UNIVERSAL-UE-HB,IMP-DW-DW",
+        "ployIds": "IMP-DW-S-MT",
+        "user": {
+          "userId": "Eknnv",
+          "email": "",
+          "userName": "scatty",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "zkeEbpMAHE",
+        "userId": "fbXK1",
+        "killteamId": "IMP-DW",
+        "seq": 7,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 277,
+        "importCount": 0,
+        "createdAt": "2025-09-12T10:06:53.033Z",
+        "updatedAt": "2026-05-31T03:37:16.783Z",
+        "portraitUpdatedAt": "2025-10-12T21:51:56.355Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-AR,IMP-DW-SVBSC,IMP-DW-SST,IMP-DW-DW,UNIVERSAL-UE-LAD",
+        "ployIds": "IMP-DW-S-TSTS",
+        "user": {
+          "userId": "fbXK1",
+          "email": "",
+          "userName": "mugwump",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "uCwxTcX2CF",
+        "userId": "fKS3y",
+        "killteamId": "IMP-DW",
+        "seq": 6,
+        "rosterName": "My Watch Begins ",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 592,
+        "importCount": 0,
+        "createdAt": "2025-09-14T21:05:45.286Z",
+        "updatedAt": "2026-05-31T03:36:31.307Z",
+        "portraitUpdatedAt": "2025-09-28T11:20:37.860Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-DW,UNIVERSAL-UE-LAD,UNIVERSAL-UE-XG-KRAK",
+        "ployIds": "",
+        "user": {
+          "userId": "fKS3y",
+          "email": "",
+          "userName": "Offthechainsword",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "BGWqP9PZgj",
+        "userId": "hlXED",
+        "killteamId": "IMP-DW",
+        "seq": 15,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 1292,
+        "importCount": 19,
+        "createdAt": "2025-09-10T22:42:33.634Z",
+        "updatedAt": "2026-05-31T04:19:12.697Z",
+        "portraitUpdatedAt": "2025-09-12T02:03:31.328Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-UG-SMK",
+        "ployIds": "",
+        "user": {
+          "userId": "hlXED",
+          "email": "",
+          "userName": "RMSAFE",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "JdeJCjXeD9",
+        "userId": "i8oGH",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Deathwatch",
+        "description": "**FACTION RULES**\n\n**VETERAN ASTARTES**\nDuring each friendly **DEATHWATCH** operative’s \nactivation, it can perform either two **Shoot**\nactions or two **Fight** actions. If it’s two **Shoot**\nactions and an auxiliary grenade launcher, frag \ncannon, heavy plasma incinerator, infernus \nheavy bolter, plasma pistol or stalker bolt rifle is \nselected for both, 1 additional AP must be spent \nfor the second action.\n\nEach friendly **DEATHWATCH** operative can \ncounteract regardless of its order. Whenever it \ndoes, it can perform an additional 1AP action for \nfree during that counteraction, but both actions \nmust be different.\n\n**SPECIAL ISSUE AMMUNITION**\nOnce per turning point, when a friendly \n**DEATHWATCH** operative is performing the \n**Shoot** action, in the Select Weapon step, you \ncan use this rule. If you do, select one of the \nfollowing weapon rules for that operative’s ranged \nweapons to have until the end of the action. This \nrule cannot be used with explosive grenades (see \nuniversal equipment) or melta bombs.\n• Blast 1\" (you cannot select this if the weapon \nprofile being used has the Torrent weapon rule)\n• Devastating 1\n• Lethal 5+\n• Piercing 1\n• Rending\n• Saturate\n• Severe\n\nGeneral datasheet setup with custom photos IG: **pontus_minipainting**",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 539,
+        "importCount": 0,
+        "createdAt": "2025-12-10T16:11:06.993Z",
+        "updatedAt": "2026-05-31T03:23:05.145Z",
+        "portraitUpdatedAt": "2026-01-13T22:29:32.947Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "i8oGH",
+          "email": "",
+          "userName": "Smoerkniven",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "GjBGySdZqv",
+        "userId": "J4rdq",
+        "killteamId": "IMP-DW",
+        "seq": 3,
+        "rosterName": "Hellhounds",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 359,
+        "importCount": 0,
+        "createdAt": "2025-11-21T00:25:56.265Z",
+        "updatedAt": "2026-05-31T04:09:45.351Z",
+        "portraitUpdatedAt": "2025-11-28T04:28:42.322Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "J4rdq",
+          "email": "",
+          "userName": "jeezmh",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "QKxqrk6Bat",
+        "userId": "k8ig9",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 224,
+        "importCount": 0,
+        "createdAt": "2025-10-23T08:49:32.587Z",
+        "updatedAt": "2026-05-31T03:18:31.729Z",
+        "portraitUpdatedAt": "2026-05-24T20:41:06.806Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-SST,IMP-DW-AR,IMP-DW-SVBSC,UNIVERSAL-UE-UG-SMK",
+        "ployIds": "",
+        "user": {
+          "userId": "k8ig9",
+          "email": "",
+          "userName": "rainfield",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "zdVZdhjSfT",
+        "userId": "kR0Ww",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "rosterName": "4th Raptors XenoHunters",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 723,
+        "importCount": 1,
+        "createdAt": "2025-09-12T08:04:04.910Z",
+        "updatedAt": "2026-05-31T04:07:14.545Z",
+        "portraitUpdatedAt": "2025-09-30T09:00:27.339Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-AR",
+        "ployIds": "IMP-DW-S-MT,IMP-DW-S-TLV,IMP-DW-S-ATSKNF,IMP-DW-T-SNTA,IMP-DW-T-AAS,IMP-DW-T-THP",
+        "user": {
+          "userId": "kR0Ww",
+          "email": "",
+          "userName": "Volfie",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "fp5LMUcehb",
+        "userId": "lk7Fk",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Alpha’s Omega",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 39,
+        "importCount": 0,
+        "createdAt": "2026-05-21T18:11:35.924Z",
+        "updatedAt": "2026-05-31T09:34:18.467Z",
+        "portraitUpdatedAt": "2026-05-26T00:13:13.996Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "lk7Fk",
+          "email": "",
+          "userName": "ConnorZeitz",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "nPnG5xHXu7",
+        "userId": "lk7Fk",
+        "killteamId": "IMP-DW",
+        "seq": 8,
+        "rosterName": "The Long Vigil",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 412,
+        "importCount": 0,
+        "createdAt": "2025-09-19T13:19:56.314Z",
+        "updatedAt": "2026-05-31T05:24:30.127Z",
+        "portraitUpdatedAt": "2025-10-17T03:15:04.564Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-UG-SMK,IMP-DW-SST,UNIVERSAL-UE-LAD",
+        "ployIds": "IMP-DW-S-TLV,IMP-DW-S-MT,IMP-DW-S-ATSKNF",
+        "user": {
+          "userId": "lk7Fk",
+          "email": "",
+          "userName": "ConnorZeitz",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "CKExDG8P9c",
+        "userId": "lnJhV",
+        "killteamId": "IMP-DW",
+        "seq": 3,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 729,
+        "importCount": 2,
+        "createdAt": "2025-09-27T22:33:26.522Z",
+        "updatedAt": "2026-05-31T14:13:09.351Z",
+        "portraitUpdatedAt": "2025-09-27T22:34:05.827Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-XG-KRAK",
+        "ployIds": "",
+        "user": {
+          "userId": "lnJhV",
+          "email": "",
+          "userName": "Dewgongz21",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "uWZ55Qe8p7",
+        "userId": "MCVXpGnDv7",
+        "killteamId": "IMP-DW",
+        "seq": 5,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 171,
+        "importCount": 0,
+        "createdAt": "2026-03-17T10:09:14.644Z",
+        "updatedAt": "2026-05-31T03:02:30.593Z",
+        "portraitUpdatedAt": "2026-04-26T22:50:00.320Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-DW,IMP-DW-SVBSC,UNIVERSAL-UE-LAD,UNIVERSAL-UE-XG-KRAK,UNIVERSAL-UE-XG-FRAG",
+        "ployIds": "",
+        "user": {
+          "userId": "MCVXpGnDv7",
+          "email": null,
+          "userName": "Eavy_Plastic",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "3wU52xECXm",
+        "userId": "mznHO",
+        "killteamId": "IMP-DW",
+        "seq": 6,
+        "rosterName": "Zero Company",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 1240,
+        "importCount": 5,
+        "createdAt": "2025-12-22T23:48:50.707Z",
+        "updatedAt": "2026-05-31T14:37:01.993Z",
+        "portraitUpdatedAt": "2025-12-30T18:55:32.857Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SVBSC,IMP-DW-SST,IMP-DW-AR,UNIVERSAL-UE-UG-SMK,UNIVERSAL-UE-XG-KRAK",
+        "ployIds": "IMP-DW-S-TSTS,IMP-DW-S-TLV",
+        "user": {
+          "userId": "mznHO",
+          "email": "",
+          "userName": "KombatWaaaghbat",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "MEAEbLN5Dd",
+        "userId": "NWOF1",
+        "killteamId": "IMP-DW",
+        "seq": 2,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 407,
+        "importCount": 0,
+        "createdAt": "2025-11-03T13:44:00.453Z",
+        "updatedAt": "2026-05-31T10:43:32.584Z",
+        "portraitUpdatedAt": "2025-12-21T02:14:46.492Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-DW,IMP-DW-AR",
+        "ployIds": "",
+        "user": {
+          "userId": "NWOF1",
+          "email": "",
+          "userName": "Kynazlrd",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "pjDpRTUcTK",
+        "userId": "ofItL",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "rosterName": "KillTeam Mormont",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 743,
+        "importCount": 1,
+        "createdAt": "2025-09-17T22:17:21.843Z",
+        "updatedAt": "2026-05-31T08:58:44.963Z",
+        "portraitUpdatedAt": "2025-09-19T05:31:51.901Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "ofItL",
+          "email": "",
+          "userName": "Landelk",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "7eUNeahLU2",
+        "userId": "pqw3d",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 1158,
+        "importCount": 9,
+        "createdAt": "2025-10-02T15:03:40.155Z",
+        "updatedAt": "2026-05-31T11:56:31.654Z",
+        "portraitUpdatedAt": "2025-10-06T08:37:19.555Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "IMP-DW-T-THP",
+        "user": {
+          "userId": "pqw3d",
+          "email": "",
+          "userName": "BlackBox",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "RFbks4WncG",
+        "userId": "QBpHQ",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "rosterName": "Task Force Zeta",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 644,
+        "importCount": 2,
+        "createdAt": "2025-10-05T17:52:57.883Z",
+        "updatedAt": "2026-05-31T03:53:36.240Z",
+        "portraitUpdatedAt": "2025-11-05T20:46:19.927Z",
+        "turn": 1,
+        "VP": 4,
+        "CP": 4,
+        "eqIds": "IMP-DW-DW,IMP-DW-SST,IMP-DW-SVBSC,UNIVERSAL-UE-LAD",
+        "ployIds": "",
+        "user": {
+          "userId": "QBpHQ",
+          "email": "",
+          "userName": "Ipsum",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "B529msAHXZ",
+        "userId": "RIqLd",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "rosterName": "Raptors - The Claw",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 860,
+        "importCount": 0,
+        "createdAt": "2025-09-12T02:03:07.132Z",
+        "updatedAt": "2026-05-31T14:03:13.816Z",
+        "portraitUpdatedAt": "2025-09-28T15:43:33.160Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "RIqLd",
+          "email": "",
+          "userName": "WetBlanket",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "hTNevPqSCD",
+        "userId": "Se5TF",
+        "killteamId": "IMP-DW",
+        "seq": 11,
+        "rosterName": "DeathSeer Circle",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 297,
+        "importCount": 0,
+        "createdAt": "2025-12-14T17:30:08.390Z",
+        "updatedAt": "2026-05-31T02:38:00.084Z",
+        "portraitUpdatedAt": "2026-02-06T09:51:20.563Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-DW,IMP-DW-SVBSC,UNIVERSAL-UE-UG-STN,IMP-DW-AR",
+        "ployIds": "",
+        "user": {
+          "userId": "Se5TF",
+          "email": "",
+          "userName": "redjester234",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "aWSrmff2mc",
+        "userId": "taKkuJ43sk",
+        "killteamId": "IMP-DW",
+        "seq": 11,
+        "rosterName": "Deathwatch",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 171,
+        "importCount": 0,
+        "createdAt": "2026-02-02T16:42:23.789Z",
+        "updatedAt": "2026-05-31T04:16:55.748Z",
+        "portraitUpdatedAt": "2026-04-29T15:55:39.050Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "",
+        "ployIds": "",
+        "user": {
+          "userId": "taKkuJ43sk",
+          "email": null,
+          "userName": "Boon",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "D4z3rCstan",
+        "userId": "X6bse",
+        "killteamId": "IMP-DW",
+        "seq": 10,
+        "rosterName": "Hive Warriors",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 548,
+        "importCount": 0,
+        "createdAt": "2025-10-23T21:18:39.479Z",
+        "updatedAt": "2026-05-31T03:43:00.234Z",
+        "portraitUpdatedAt": "2025-10-23T21:21:16.288Z",
+        "turn": 1,
+        "VP": 1,
+        "CP": 1,
+        "eqIds": "IMP-DW-SVBSC,IMP-DW-DW,IMP-DW-AR,UNIVERSAL-UE-MN,UNIVERSAL-UE-LAD",
+        "ployIds": "IMP-DW-S-TLV,IMP-DW-S-ATSKNF",
+        "user": {
+          "userId": "X6bse",
+          "email": "",
+          "userName": "Go99les",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "yKAk3vNNPP",
+        "userId": "xJ70Y",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Killteam Crombopulous",
+        "description": null,
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 260,
+        "importCount": 0,
+        "createdAt": "2026-02-03T04:43:21.715Z",
+        "updatedAt": "2026-05-31T03:53:53.098Z",
+        "portraitUpdatedAt": "2026-02-03T04:43:39.271Z",
+        "turn": 4,
+        "VP": 12,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-LAD,UNIVERSAL-UE-XG-FRAG",
+        "ployIds": "IMP-DW-S-TLV",
+        "user": {
+          "userId": "xJ70Y",
+          "email": "",
+          "userName": "AeldariLambo",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "ycmc5ZySEN",
+        "userId": "YG81K",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "rosterName": "Strike Team Gladius",
+        "description": "",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 354,
+        "importCount": 0,
+        "createdAt": "2025-09-11T20:54:27.083Z",
+        "updatedAt": "2026-05-31T04:08:05.177Z",
+        "portraitUpdatedAt": "2026-02-23T01:08:25.972Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-SST,IMP-DW-SVBSC,IMP-DW-AR,UNIVERSAL-UE-LB,IMP-DW-DW",
+        "ployIds": "",
+        "user": {
+          "userId": "YG81K",
+          "email": "",
+          "userName": "Hardcover",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      },
+      {
+        "rosterId": "ghMRcSe9d9",
+        "userId": "ZYbehu7YeD",
+        "killteamId": "IMP-DW",
+        "seq": 6,
+        "rosterName": "Killteam Echo Omega",
+        "description": "Alpha Legion loyalist Necron killing specialists\n\"We are the echo that endures\"\n\nWins:12\nLosses: 3",
+        "hasCustomPortrait": true,
+        "isSpotlight": true,
+        "viewCount": 153,
+        "importCount": 0,
+        "createdAt": "2026-04-06T14:06:33.042Z",
+        "updatedAt": "2026-05-31T04:09:06.903Z",
+        "portraitUpdatedAt": "2026-04-07T03:49:51.155Z",
+        "turn": 1,
+        "VP": 0,
+        "CP": 3,
+        "eqIds": "IMP-DW-AR,IMP-DW-SVBSC,UNIVERSAL-UE-UG-SMK,UNIVERSAL-UE-MN",
+        "ployIds": "IMP-DW-S-TLV,IMP-DW-T-AAS,IMP-DW-S-MT",
+        "user": {
+          "userId": "ZYbehu7YeD",
+          "email": null,
+          "userName": "Metamask",
+          "isPrivate": false
+        },
+        "killteam": {
+          "factionId": "IMP",
+          "killteamId": "IMP-DW",
+          "killteamName": "Deathwatch",
+          "description": "Deathwatch kill teams combat the xenos foes of the Imperium with adaptive expertise and specialist weaponry.  \n\nThey wield some of Humanity’s most highly advanced weapons alongside more esoteric equipment. Besides their superhuman strength and speed, the Deathwatch bring to the battlefield their hatred of the xenos in all its forms.",
+          "composition": "\nA DEATHWATCH Killteam is composed of 5 DEATHWATCH operatives selected from the following list:\n- WATCH SERGEANT\n- AEGIS\n- BLADEMASTER\n- BOMBARD\n- BREACHER\n- DEMOLISHER\n- DISRUPTOR\n- GUNNER\n- HEADTAKER\n- HORDE-SLAYER\n- MARKSMAN\n\nYour kill team can only include each operative on this list once, and can only include up to one GRAVIS operative.",
+          "archetypes": "Seek And Destroy/Security",
+          "defaultRosterId": null,
+          "defaultRoster": null,
+          "userId": null,
+          "isPublished": true,
+          "isHomebrew": false,
+          "rosterCount": 0
+        }
+      }
+    ],
+    "equipments": [
+      {
+        "eqId": "IMP-DW-DW",
+        "killteamId": "IMP-DW",
+        "seq": 1,
+        "eqName": "Digital Weapons",
+        "description": "Once per turning point, when a friendly DEATHWATCH operative performs the Fight action, at the start of the Roll Attack Dice step, you can use this rule. If you do, inflict 1 damage on the enemy operative in that sequence.",
+        "effects": ""
+      },
+      {
+        "eqId": "IMP-DW-SST",
+        "killteamId": "IMP-DW",
+        "seq": 2,
+        "eqName": "Scrutavore Servo-Thrall",
+        "description": "Once per turning point, during a friendly DEATHWATCH operative’s activation, you can use this rule. If you do, during that activation, that operative can perform a mission action for 1 less AP.\nHaving an enemy operative within its control range doesn’t prevent that friendly operative from performing that mission action.\nHowever, in such an instance, after it does so, you and your opponent roll-off. If your opponent wins, you cannot use this equipment for the rest of the battle.",
+        "effects": ""
+      },
+      {
+        "eqId": "IMP-DW-SVBSC",
+        "killteamId": "IMP-DW",
+        "seq": 3,
+        "eqName": "Sanctus-V Bioscryer Cuffs",
+        "description": "Once during each friendly DEATHWATCH operative’s activation, before or after it performs an action, if it’s not within control range of enemy operatives, you can use this rule. If you do, select one of the following:\n- That friendly operative regains up to D3 lost wounds.\n- Remove any changes to that friendly operative’s APL stat.\n- Remove one of the following tokens that friendly operative has (before that token’s activation effects are resolved, if relevant): Neutron Fragment, Poison, Terrorchem.",
+        "effects": ""
+      },
+      {
+        "eqId": "IMP-DW-AR",
+        "killteamId": "IMP-DW",
+        "seq": 4,
+        "eqName": "Ammunition Reserve",
+        "description": "Once per battle, you can use the Special Issue Ammunition faction rule for up to two Shoot actions during one turning point, but you must select different weapon rules for both uses. This takes precedence over the normal Special Issue Ammunition rules.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-AC",
+        "killteamId": null,
+        "seq": 601,
+        "eqName": "Ammo Cache (x1)",
+        "description": "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action during the battle:\r **AMMO RESUPPLY (0 AP):** One of your Ammo Cache markers the active operative controls is used during this turning point.  \n\r Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice.\n\n\r An operative cannot perform this action while within control range of an enemy operative, if that marker is not yours, or if that marker has been used this turning point.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-RW",
+        "killteamId": null,
+        "seq": 602,
+        "eqName": "Razor Wire (x1)",
+        "description": "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points, and Accessible terrain.  \n\r Obstructing: Whenever an operative would cross over this terrain feature within 1\" of it, treat the distance as an additional 1\".",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-CD",
+        "killteamId": null,
+        "seq": 603,
+        "eqName": "Comms Device (x1)",
+        "description": "Before the battle, you can set up one of your Comms Device markers wholly within your territory.\nWhile a friendly operative controls this marker, add 3\" to the distance requirements of its SUPPORT rules that refer to friendly operatives\n(e.g. ‘select one friendly operative within 6\"’ would be 9\" instead).\nNote that you cannot benefit from your opponent's Comms Device markers.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-MN",
+        "killteamId": null,
+        "seq": 604,
+        "eqName": "Mines (x1)",
+        "description": "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers, access points, and Accessible terrain.\r The first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-LB",
+        "killteamId": null,
+        "seq": 605,
+        "eqName": "Light Barricades (x2)",
+        "description": "Light barricades are Light terrain, except the feet, which are Insignificant and Exposed. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points, and Accessible terrain.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-HB",
+        "killteamId": null,
+        "seq": 606,
+        "eqName": "Heavy Barricade (x1)",
+        "description": "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 4\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features, access points, and Accessible terrain.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-LAD",
+        "killteamId": null,
+        "seq": 607,
+        "eqName": "Ladders (x2)",
+        "description": "Ladders are Insignificant and Exposed terrain. Before the battle, you can set up any of them as follows:\n- Wholly within your territory.\n- Upright against terrain that’s at least 2\" tall.\n- More than 2\" from other equipment terrain features.\n- More than 1\" from doors and access points.\n\nOnce per action, whenever an operative is climbing the terrain feature a ladder is placed against, treat the vertical distance as 1\" if the ladder is within that operative’s control range during that entire climb.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-PB",
+        "killteamId": null,
+        "seq": 608,
+        "eqName": "Portable Barricade (x1)",
+        "description": "A portable barricade is Light, Protective and Portable terrain, except the feet which are Insignificant and Exposed.\r Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points, and Accessible terrain.\r   \r \r **Protective:** While an operative is in cover from this terrain feature, improve its Save stat by 1 (to a maximum of 2+).  \r \r **Portable:** This terrain feature only provides cover while an operative is connected to it and if the shield is intervening (ignore its feet).\r Operatives connected to the inside of it can perform the following unique action during the battle:  \r \r **Move With Barricade (1 AP):**\r The same as the Reposition action, except the active operative can move no more than its Move stat minus 2\" and cannot climb, drop, jump, or use any killteam's rules that remove it and set it back up again (e.gh. HEARTHKYN SALVAGER Fly, MANDRAKE Shadow Passage).  \r \r Before this operative moves, remove the portable barricade it is connected to. After it moves, set up the portable barricade so it is connected again, but the portable barricade cannot be set up within 2\" of\r other equipment terrain features, access points or Accessible terrain. If this is not possible, the portable barricade is not set up again.  \r \r This action is treated as a Reposition action. An operative cannot perform this action while within control range of an enemy operative, or in the same activation in which it performed the Fall Back or Charge action.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-BC",
+        "killteamId": null,
+        "seq": 611,
+        "eqName": "Breaching Charge",
+        "description": "Once per battle, when a friendly operative performs the Breach action, you can use this rule. If you do, that operative can perform that action for 1 less AP (to a minimum of 1AP) as though it had the word \"breach marker\" on its datacard.",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-UG-SMK",
+        "killteamId": null,
+        "seq": 609,
+        "eqName": "Utility Grenades: 2 Smoke",
+        "description": "**Selected supply: 2 Smoke. This is one equipment selection.**\n\nWhen you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\r Each selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\r   \r \r **SMOKE GRENADE (1 AP):**  \r \r \r - Place one of your Smoke Grenade markers within 6\" of this operative. It must be visible to this operative,\r or on Vantage terrain of a terrain feature that is visible to this operative. The marker creates an area of smoke 1\" horizontally and unlimited height vertically from (but not below) it.\r - While an operative is wholly within an area of smoke, it is obscured to operatives more than 2\" from it, and vice versa.\r In addition, whenever an operative is shooting an enemy operative wholly within an area of smoke, weapons with the Piercing 2 or Piercing Crits 2 weapon rule have the Piercing 1 or Piercing Crits 1 weapon rule (respectively) instead, unless they’re within 2\" of each other.\r - In the Ready step of the next Strategy phase, roll one D3. Remove that Smoke Grenade marker after a number of activations equal to that D3 have been completed\r or at the end of the turning point (whichever comes first).\r - An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.\r ",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-UG-SMK-STN",
+        "killteamId": null,
+        "seq": 609,
+        "eqName": "Utility Grenades: 1 Smoke + 1 Stun",
+        "description": "**Selected supply: 1 Smoke + 1 Stun. This is one equipment selection.**\n\nWhen you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\r Each selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\r   \r \r **SMOKE GRENADE (1 AP):**  \r \r \r - Place one of your Smoke Grenade markers within 6\" of this operative. It must be visible to this operative,\r or on Vantage terrain of a terrain feature that is visible to this operative. The marker creates an area of smoke 1\" horizontally and unlimited height vertically from (but not below) it.\r - While an operative is wholly within an area of smoke, it is obscured to operatives more than 2\" from it, and vice versa.\r In addition, whenever an operative is shooting an enemy operative wholly within an area of smoke, weapons with the Piercing 2 or Piercing Crits 2 weapon rule have the Piercing 1 or Piercing Crits 1 weapon rule (respectively) instead, unless they’re within 2\" of each other.\r - In the Ready step of the next Strategy phase, roll one D3. Remove that Smoke Grenade marker after a number of activations equal to that D3 have been completed\r or at the end of the turning point (whichever comes first).\r - An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.\r \n\nWhen you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n  \n\n**STUN GRENADE (1 AP):**  \n\n\n- Select one enemy operative visible to and within 6\" of this operative. That operative and each other operative within 1\" of it takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.\n- An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.\n",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-UG-STN",
+        "killteamId": null,
+        "seq": 609,
+        "eqName": "Utility Grenades: 2 Stun",
+        "description": "**Selected supply: 2 Stun. This is one equipment selection.**\n\nWhen you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun).\nEach selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection.\n  \n\n**STUN GRENADE (1 AP):**  \n\n\n- Select one enemy operative visible to and within 6\" of this operative. That operative and each other operative within 1\" of it takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.\n- An operative cannot perform this action while within control range of an enemy operative, or if you have reached the total number of times your kill team can perform it.\n",
+        "effects": ""
+      },
+      {
+        "eqId": "UNIVERSAL-UE-XG-FRAG",
+        "killteamId": null,
+        "seq": 610,
+        "eqName": "Explosive Grenades: 2 Frag",
+        "description": "**Selected supply: 2 Frag. This is one equipment selection.**\n\nWhen you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n\n|**Name**|**ATK**|**HIT**|**DMG**|\n|-----|:-----:|:-----:|:-----:|\n|Frag Grenade|4|4+|2/4|\n|**Weapon Rules**|\n|Rng 6\", Blast 2\", Saturate|",
+        "effects": "ADDWEP:Frag Grenade|R|4|4+|2/4|Rng 6\", Blast 2\", Sat"
+      },
+      {
+        "eqId": "UNIVERSAL-UE-XG-FRAG-KRAK",
+        "killteamId": null,
+        "seq": 610,
+        "eqName": "Explosive Grenades: 1 Frag + 1 Krak",
+        "description": "**Selected supply: 1 Frag + 1 Krak. This is one equipment selection.**\n\nWhen you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\n\n|**Name**|**ATK**|**HIT**|**DMG**|\n|-----|:-----:|:-----:|:-----:|\n|Frag Grenade|4|4+|2/4|\n|**Weapon Rules**|\n|Rng 6\", Blast 2\", Saturate|\n\nWhen you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\r \r |**Name**|**ATK**|**HIT**|**DMG**|\r |-----|:-----:|:-----:|:-----:|\r |Krak Grenade|4|4+|4/5|\r |**Weapon Rules**|\r |Rng 6\", Piercing 1, Saturate|",
+        "effects": "ADDWEP:Frag Grenade|R|4|4+|2/4|Rng 6\", Blast 2\", Sat"
+      },
+      {
+        "eqId": "UNIVERSAL-UE-XG-KRAK",
+        "killteamId": null,
+        "seq": 610,
+        "eqName": "Explosive Grenades: 2 Krak",
+        "description": "**Selected supply: 2 Krak. This is one equipment selection.**\n\nWhen you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak).\r \r |**Name**|**ATK**|**HIT**|**DMG**|\r |-----|:-----:|:-----:|:-----:|\r |Krak Grenade|4|4+|4/5|\r |**Weapon Rules**|\r |Rng 6\", Piercing 1, Saturate|",
+        "effects": "ADDWEP:Frag Grenade|R|4|4+|2/4|Rng 6\", Blast 2\", Sat"
+      }
+    ]
+  },
+  {
+    "factionId": "IMP",
     "killteamId": "IMP-SCT",
     "killteamName": "Scout Squad",
     "description": "Scouts are the new recruits of a Space Marine chapter who have advanced far enough in the early stages of their training and biological transformation to take part in battle with the rest of the Chapter.\n  \n  \n\nMore lightly armed and armoured than full Battle brothers, their role is to range ahead of the main Space Marine force, preparing the way for the main advance by infiltrating enemy lines, sabotaging and gathering intelligence — causing as much chaos and disruption as possible.",

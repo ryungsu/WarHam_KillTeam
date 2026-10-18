@@ -1,7 +1,7 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const raw=readFileSync(new URL('../data-original/upstream.json',import.meta.url),'utf8');
-const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT'].includes(t.killteamId));
+const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT','IMP-DW'].includes(t.killteamId));
 mkdirSync(new URL('../data-original/',import.meta.url),{recursive:true});
 writeFileSync(new URL('../data-original/teams.json',import.meta.url),JSON.stringify(teams,null,2));
 for(const t of teams){

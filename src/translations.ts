@@ -70,3 +70,42 @@ const stun='**섬광 수류탄 (1AP):** 보이고 6인치 이내인 적 1명을 
 const frag='**프랙 수류탄:** ATK 4 · HIT 4+ · DMG 2/4. 사거리 6인치, Blast 2인치, Saturate.';
 const krak='**크랙 수류탄:** ATK 4 · HIT 4+ · DMG 4/5. 사거리 6인치, Piercing 1, Saturate.';
 for(const [id,count,desc] of [['UG-SMK','연막 2개',smoke],['UG-SMK-STN','연막 1개 + 섬광 1개',smoke+'\n\n'+stun],['UG-STN','섬광 2개',stun],['XG-FRAG','프랙 2개',frag],['XG-FRAG-KRAK','프랙 1개 + 크랙 1개',frag+'\n\n'+krak],['XG-KRAK','크랙 2개',krak]])texts[`UNIVERSAL-UE-${id}`]=`장비 한 슬롯으로 **${count}**를 선택합니다. 선택한 개수가 전투 중 해당 수류탄의 총 사용 횟수입니다.\n\n${desc}`;
+
+// Deathwatch: translations of the retained kt24_v4 community snapshot.
+Object.assign(names,{
+'Deathwatch':'데스워치','Watch Sergeant':'워치 서전트','Aegis':'이지스','Blademaster':'블레이드마스터','Bombard':'봄바드','Breacher':'브리처','Demolisher':'데몰리셔','Disruptor':'디스럽터','Gunner':'거너','Headtaker':'헤드테이커','Horde-Slayer':'호드 슬레이어','Marksman':'마크스맨',
+'Power Maul & Storm Shield':'파워 몰 & 스톰 실드','Special Issue Bolt Pistol':'특수탄 볼트 피스톨','Xenophase Blade':'제노페이즈 블레이드','Frag Cannon':'프랙 캐논','Hellstorm Bolt Rifle':'헬스톰 볼트 라이플','Melta Bomb':'멜타 폭탄','Heavy Thunder Hammer':'헤비 썬더 해머','Marksman Bolt Carbine':'마크스맨 볼트 카빈','Heavy Plasma Incinerator':'헤비 플라즈마 인시너레이터','Combat Knives':'컴뱃 나이프','Infernus Heavy Bolter':'인페르누스 헤비 볼터',
+'Adaptable Armoury':'유연한 무기고','Special Issue Ammunition':'특수탄','Strategic Command':'전략 지휘','Veteran Astartes':'베테랑 아스타르테스','*Shield':'*방패','Storm Shield':'스톰 실드','*Phase Sweep':'*페이즈 휩쓸기','Adaptive Swordsmanship':'유연한 검술','Aggressive Force':'공격적 완력','Brutal Assault':'잔혹한 강습','Advanced Omni-Scrambler':'고급 옴니 스크램블러','Auspex Triangulation':'오스펙스 삼각 측정','Clandestine Headtaker':'은밀한 참수자','Grav-chute and Grapnel Launcher':'중력 낙하산과 그래프넬 발사기','Vigilant Marksman':'경계하는 명사수',
+'Mission Tactics':'임무 전술','The Long Vigil':'기나긴 경계','The Shield That Slays':'살육의 방패','Suffer Not The Alien':'외계종을 용납하지 마라','Auspicator Tracking':'오스피케이터 추적','Advanced Auspex Scan':'고급 오스펙스 스캔','Digital Weapons':'디지털 무기','Scrutavore Servo-Thrall':'스크루타보어 서보 노예','Sanctus-V Bioscryer Cuffs':'상투스 V 생체 탐지 커프','Ammunition Reserve':'예비 탄약',
+'Duel':'결투','Phase Sweep':'페이즈 휩쓸기','Shell':'포탄','Shrapnel':'산탄','Flame':'화염','Focused Bolt':'집중 볼트','Sweeping Bolt':'휩쓸기 볼트','Mobile':'기동','Heavy':'중량'});
+const deathwatchAbilityTexts:Record<string,string>={
+'AA':'장비 선택지를 하나 추가로 선택할 수 있습니다.',
+'SIA':'터닝 포인트마다 한 번, 아군 데스워치 요원이 사격 행동을 수행할 때 무장 선택 단계에서 사용할 수 있습니다. 다음 무기 규칙 하나를 선택하여 그 행동이 끝날 때까지 해당 요원의 원거리 무기에 부여합니다. 폭발 수류탄과 멜타 폭탄에는 사용할 수 없습니다.\n- Blast 1인치: 사용하는 프로필에 Torrent가 있다면 선택 불가.\n- Devastating 1\n- Lethal 5+\n- Piercing Crits 1\n- Saturate\n- Severe',
+'SC':'이 요원이 킬존에 있는 동안 전투마다 다음을 각각 한 번 사용할 수 있습니다.\n- 데스워치 전략 플로이 하나를 0CP로 사용.\n- 데스워치 교전 플로이 하나를 0CP로 사용.',
+'VAS':'각 아군 데스워치 요원은 자기 활성화에 사격 행동 두 번 또는 근접전 행동 두 번을 수행할 수 있습니다. 사격 두 번에서 보조 유탄 발사기·프랙 캐논·헤비 플라즈마 인시너레이터·인페르누스 헤비 볼터·플라즈마 피스톨·스토커 볼트 라이플을 두 번 모두 선택하거나, 어느 한 번이라도 멜타 폭탄을 선택했다면 두 번째 행동에 1AP를 추가로 소비합니다.\n\n각 아군 데스워치 요원은 명령과 무관하게 대응 행동을 할 수 있습니다. 대응할 때 서로 다른 행동이어야 한다는 조건으로 추가 1AP 행동 하나를 무료로 수행할 수 있습니다. 같은 대응 중 근접전과 사격을 함께 수행할 수는 없습니다.',
+'SH':'이 무기로 근접전 또는 반격을 할 때, 각 방어로 미처리 성공 주사위 두 개를 막을 수 있습니다(하나 대신).',
+'SS':'적이 이 요원을 사격할 때 Piercing의 수치를 1 낮춥니다. 따라서 Piercing 1은 무시됩니다.',
+'PS':'이 프로필로 근접전 행동을 수행한 뒤 전투불능이 아니라면, 즉시 같은 프로필로 무료 근접전 행동을 수행할 수 있습니다. 각 활성화 또는 대응 중 이 프로필로 통제 범위 안의 각 적과 한 번씩만 싸울 수 있습니다. 이 규칙은 행동 제한보다 우선하며, 이 요원이 전투불능이 되거나 통제 범위 안 모든 적과 싸울 때까지 무료 근접전 행동을 이어갈 수 있습니다.',
+'AS':'제노페이즈 블레이드의 명중 능력치 변경을 무시할 수 있습니다. 근접전 또는 반격 시 정상 순서보다 먼저 성공 주사위 하나를 처리할 수 있지만, 그 주사위는 반드시 방어에 사용해야 합니다.',
+'AF':'근접전 또는 반격 시 일반·치명 피해가 3 이상이면 이 요원이 받는 피해가 1 감소합니다. 살육의 방패 전략 플로이와 중첩되지 않습니다.',
+'BA':'이 요원이 근접전을 할 때 헤비 썬더 해머에 Brutal을 부여합니다. 돌격 행동을 수행하면 활성화/대응 종료까지 헤비 썬더 해머에 Ceaseless를 부여합니다.',
+'AOS':'전략적 책략. 이 요원에게 보이거나 6인치 이내인 적 하나를 선택하고 D6을 굴립니다. 다음 교전 단계에서 상대가 주사위 결과만큼의 적 요원을 활성화하거나, 해당 적이 마지막으로 활성화할 적이 될 때까지 그 적은 활성화하거나 행동할 수 없습니다.',
+'AT':'이 요원이 적 통제 범위 밖에 있고 사격 표적(해당 시 주 표적)이 이 요원에게 보이면, 고급 오스펙스 스캔 교전 플로이를 0CP로 사용할 수 있습니다. 사격하는 요원이 이 요원일 필요는 없습니다. 같은 활성화/대응의 후속 사격도 이 조건을 충족해야 하며, 아니면 해당 후속 사격에 플로이 효과가 없습니다.',
+'CHT':'은폐 명령 상태에서도 돌격 행동을 수행할 수 있습니다. 활성화/대응 시작 시 이 요원을 볼 수 없었던 적과 근접전할 때, 해당 공방의 첫 타격 직후 상대보다 먼저 다른 성공 주사위 하나를 타격으로 처리할 수 있습니다.',
+'GCGL':'등반 시 실제 수직 이동 거리와 무관하게 수직 거리를 2인치로 취급합니다. 낙하 시 수직 거리를 무시합니다.',
+'VIG':'킬존과 무관하게 자기 활성화에 경계 행동을 수행할 수 있습니다(근접 구역 규칙 참조). 근접 구역 규칙 사용 시 터닝 포인트마다 한 번, 경계로 무료 사격을 수행한 직후 무료 경계 행동을 할 수 있습니다. 그렇게 하면 대응 행동을 할 수 없으며, 이미 대응했다면 두 번째 경계를 할 수 없습니다.'};
+for(const op of ['SGT','AEG','BLM','BOM','BRC','DEM','DIS','GNR','HTK','HSL','MRK'])for(const key of ['SIA','VAS'])texts[`IMP-DW-${op}-${key}`]=deathwatchAbilityTexts[key];
+for(const [op,keys] of Object.entries({SGT:['AA','SC'],AEG:['SH','SS'],BLM:['PS','AS'],DEM:['AF','BA'],DIS:['AOS','AT'],HTK:['CHT','GCGL'],MRK:['VIG']}))for(const key of keys)texts[`IMP-DW-${op}-${key}`]=deathwatchAbilityTexts[key];
+Object.assign(texts,{
+'IMP-DW-S-MT':'은폐 또는 교전 명령 하나를 선택합니다. 해당 명령의 적에게 아군 데스워치가 사격하거나 근접전할 때 그 아군의 무기에 Balanced를 부여합니다.',
+'IMP-DW-S-TLV':'자신의 영역 안에 완전히 들어온 아군 데스워치가 사격당할 때 방어 주사위 하나를 재굴림할 수 있습니다.',
+'IMP-DW-S-TSTS':'상대 영역 안에 완전히 들어온 아군 데스워치가 받는 일반 피해가 4 이상이면 피해를 1 줄입니다.',
+'IMP-DW-S-ATSKNF':'부상으로 인한 아군 데스워치의 능력치 변경을 무시할 수 있습니다. 무기 능력치도 포함합니다.',
+'IMP-DW-T-SNTA':'아군 데스워치가 CHAOS·IMPERIUM 키워드가 모두 없는 적에게 사격하거나 근접전할 때 공격 주사위를 굴린 후 사용합니다. 원하는 공격 주사위를 재굴림할 수 있습니다.',
+'IMP-DW-T-AT':'아군 데스워치가 대응 행동을 할 때 행동 수행 전에 사용합니다. 그 요원의 명령을 변경할 수 있습니다.',
+'IMP-DW-T-AAS':'아군 데스워치가 사격 행동을 수행할 때 사용합니다. 활성화/대응 종료까지 원거리 무기에 Saturate를 부여하고 적 요원은 시야 방해 상태가 될 수 없습니다.',
+'IMP-DW-T-THP':'적이 아군 데스워치를 사격할 때 방어 주사위 굴림 단계에 사용합니다. 일반 성공 하나를 치명 성공으로 대신 채택할 수 있습니다.',
+'IMP-DW-DW':'터닝 포인트마다 한 번, 아군 데스워치의 근접전 행동 중 공격 주사위 굴림 단계 시작에 사용할 수 있습니다. 그 공방의 적에게 피해 1을 줍니다.',
+'IMP-DW-SST':'터닝 포인트마다 한 번, 아군 데스워치의 활성화에 사용할 수 있습니다. 그 활성화 중 임무 행동 하나의 비용이 1AP 감소합니다. 적 통제 범위 안에서도 그 임무 행동을 수행할 수 있지만, 그렇게 했다면 수행 후 상대와 굴림 대결을 합니다. 상대가 이기면 이 장비는 남은 전투 동안 사용할 수 없습니다.',
+'IMP-DW-SVBSC':'각 아군 데스워치의 활성화마다 한 번, 적 통제 범위 밖에서 행동 전후에 사용할 수 있습니다. 다음 하나를 선택합니다.\n- 잃은 체력을 최대 D3 회복.\n- APL 능력치 변경을 모두 제거.\n- Neutron Fragment·Poison·Terrorchem 토큰 중 하나 제거. 해당 시 활성화 효과를 처리하기 전에 제거합니다.',
+'IMP-DW-AR':'전투마다 한 번, 한 터닝 포인트 동안 특수탄 진영 규칙을 최대 두 번의 사격 행동에 사용할 수 있습니다. 두 번에 서로 다른 무기 규칙을 선택해야 합니다. 이 규칙은 일반 특수탄 제한보다 우선합니다.'});

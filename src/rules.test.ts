@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {loadouts,validate,parseBackup} from './rules.ts';
 import type {Team,Roster} from './types.ts';
 const teams:Team[]=JSON.parse(readFileSync(new URL('../public/data/teams.json',import.meta.url),'utf8').replace(/^\uFEFF/,''));
-const [a,s]=teams;
+const a=teams.find(t=>t.killteamId==='IMP-AOD')!,s=teams.find(t=>t.killteamId==='IMP-SCT')!;
 const roster=(t:Team,types:string[]):Roster=>({id:'test',name:'test',team:t.killteamId,updated:'2026-10-14',members:types.map((name,i)=>{const o=t.opTypes.find(o=>o.opTypeName===name)!;return {id:String(i),type:o.opTypeId,loadout:loadouts(o)[0]}}),equipment:[],tactics:t===a?['AGG','MOB']:[]});
 test('all supported operative loadouts map to actual source weapons',()=>{for(const t of teams)for(const o of t.opTypes)assert.ok(loadouts(o).length)});
 test('valid Angels roster and repeatable warriors',()=>assert.deepEqual(validate(roster(a,['Space Marine Captain',...Array(5).fill('Intercessor Warrior')]),a),[]));
@@ -14,3 +14,11 @@ test('Scout two distinct heavy gunner loadouts legal, duplicate heavy bolters il
 test('requires exactly one leader and full operative count',()=>assert.ok(validate(roster(s,['Scout Warrior']),s).length>=2));
 test('rejects invalid backup member, version and equipment overage',()=>{assert.throws(()=>parseBackup({version:2,rosters:[]},teams));assert.throws(()=>parseBackup({version:1,rosters:[{...roster(s,[]),members:[null]}]},teams));const r=roster(s,['Scout Sergeant',...Array(8).fill('Scout Warrior')]);r.equipment=s.equipments.slice(0,5).map(e=>e.eqId);assert.ok(validate(r,s).some(e=>e.includes('4개')))});
 test('one grenade pair per category',()=>{const r=roster(s,['Scout Sergeant',...Array(8).fill('Scout Warrior')]);r.equipment=['UNIVERSAL-UE-UG-SMK','UNIVERSAL-UE-UG-STN'];assert.ok(validate(r,s).some(e=>e.includes('수류탄')))});
+
+const dw=teams.find(t=>t.killteamId==='IMP-DW')!;
+test('Deathwatch five distinct operatives need no mandatory sergeant',()=>assert.deepEqual(validate(roster(dw,['Aegis','Blademaster','Demolisher','Disruptor','Marksman']),dw),[]));
+test('Deathwatch cannot duplicate specialists or take two Gravis',()=>{assert.ok(validate(roster(dw,['Aegis','Aegis','Demolisher','Disruptor','Marksman']),dw).some(e=>e.includes('최대 1명')));assert.ok(validate(roster(dw,['Bombard','Breacher','Demolisher','Disruptor','Marksman']),dw).some(e=>e.includes('GRAVIS')))});
+test('Watch Sergeant grants a fifth equipment selection only while selected',()=>{const r=roster(dw,['Watch Sergeant','Aegis','Demolisher','Disruptor','Marksman']);r.equipment=dw.equipments.slice(0,5).map(e=>e.eqId);assert.deepEqual(validate(r,dw),[]);r.members.shift();assert.ok(validate(r,dw).some(e=>e.includes('4개')))});
+
+import {allowedArchetypes} from './missions.ts';
+test('Deathwatch missions include Security and Seek and Destroy',()=>assert.deepEqual(allowedArchetypes('IMP-DW'),allowedArchetypes('IMP-AOD')));
