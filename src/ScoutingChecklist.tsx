@@ -1,0 +1,7 @@
+import {scoutingOptions,cleanScouting,toggleScouting} from './forwardScouting';
+import {texts} from './translations';
+export function ForwardScouting({value,onChange,show}:{value:string[];onChange:(value:string[])=>void;show:()=>void}){
+ const selected=cleanScouting(value);
+ const paragraphs=(texts['IMP-SCT-SGT-A-FS']??'').split('\n').filter(p=>p.startsWith('- **'));
+ return <details className="forward-scouting"><summary><strong>선행 정찰</strong><span>{selected.length} / 6 선택 ▾</span></summary><p className="hint">최대 6회 선택 · 이동과 경보 장치는 각각 2회까지. 전투별로 자동 저장됩니다.</p><fieldset><legend className="sr-only">선행 정찰 선택</legend>{scoutingOptions.map((o,index)=><div className="scouting-option" key={o.id}><div className="scouting-option-heading"><strong>{o.name} <small>{o.en}</small></strong><span className="scouting-checks">{Array.from({length:o.max},(_,i)=>{const id=`${o.id}-${i+1}`,checked=selected.includes(id);return <label key={id}><input type="checkbox" aria-label={`${o.name} ${i+1}회`} checked={checked} disabled={!checked&&selected.length>=6} onChange={e=>onChange(toggleScouting(selected,id,e.target.checked))}/>{o.max>1?`${i+1}회`:'선택'}</label>})}</span></div><p>{paragraphs[index]?.replace(/^- \*\*.*?\*\*\s*/,'')}</p></div>)}</fieldset><p className="hint" role="status">{selected.length===6?'6회 선택 완료 · 변경하려면 체크를 해제하세요.':`${6-selected.length}회 더 선택할 수 있습니다.`}</p><button type="button" onClick={show}>전체 규칙 · 영문 원본 ↗</button></details>;
+}

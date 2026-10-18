@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {scoutingSlots,cleanScouting,toggleScouting} from './forwardScouting.ts';
+test('scouting has 11 slots, including two movement and alarm picks',()=>{assert.equal(scoutingSlots.length,11);assert.ok(scoutingSlots.includes('move-2'));assert.ok(scoutingSlots.includes('alarm-2'));assert.ok(!scoutingSlots.includes('trap-2'))});
+test('cannot select a seventh slot, can uncheck at limit and replace',()=>{const six=scoutingSlots.slice(0,6);assert.deepEqual(toggleScouting(six,'alarm-1',true),six);const five=toggleScouting(six,six[0],false);assert.equal(toggleScouting(five,'alarm-1',true).length,6)});
+test('restored selections discard invalid and duplicate values and cap at six',()=>{assert.deepEqual(cleanScouting(null),[]);assert.deepEqual(cleanScouting(['trap-1','trap-1','bad']),['trap-1']);assert.equal(cleanScouting(scoutingSlots).length,6)});
