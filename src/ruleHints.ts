@@ -1,6 +1,10 @@
 export const coreSource='https://assets.warhammer-community.com/eng_jun25_kt_lite_rules-5yqs3aeeud-r6homxqjvf.pdf';
 export type RuleHint={id:string;en:string;ko:string;body:string;source?:string};
 export const ruleHints:RuleHint[]=[
+{id:'stun-grenade',en:'Stun Grenade',ko:'섬광 수류탄',body:'1AP. 보이고 6인치 이내인 적 하나를 선택합니다. 그 적과 주변 1인치 이내 모든 요원은 각각 D6을 굴립니다. 3+이면 다음 활성화 종료까지 APL을 1 줄입니다. 적 통제 범위 안이나 장비로 얻은 사용 횟수를 모두 소비했다면 수행할 수 없습니다. 스카웃 워리어의 적응형 장비는 별도 횟수 규칙을 따릅니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
+{id:'smoke-grenade',en:'Smoke Grenade',ko:'연막 수류탄',body:'1AP. 6인치 이내에 보이는 위치, 또는 보이는 지형의 고지에 연막 마커를 놓습니다. 수평 1인치·위로 무제한인 연막을 만듭니다. 연막 안에 완전히 있는 요원과 2인치 초과 떨어진 요원은 서로 시야 방해 상태입니다. 연막 안 표적에게 관통 2·치명 관통 2는 각각 1이 됩니다(서로 2인치 이내 제외). 다음 전략 단계 준비에 D3을 굴려 그 수의 활성화 후 또는 TP 종료 중 먼저 오는 때 제거합니다. 적 통제 범위 안이나 사용 횟수 소진 시 수행할 수 없습니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
+{id:'obscured',en:'obscured',ko:'시야 방해',body:'사격의 명중 처리에 영향을 주는 상태입니다. 엄폐와 구별합니다. 지형·거리·장비에 따른 예외와 최신 핵심 규칙을 확인하세요.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
+
 {id:'ready-step',en:'Ready step',ko:'준비 단계',body:'전략 단계에 아군 요원을 준비 상태로 만드는 단계입니다.'},
 {id:'seek-light',en:'Seek Light',ko:'경량 탐색',body:'은폐 표적 선정 시 경량 지형의 엄폐를 무시합니다. 방어 주사위에서 얻는 엄폐 성공 자체를 없애지는 않습니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
 {id:'pick-up',en:'Pick Up Marker',ko:'마커 줍기',body:'운반 가능한 마커를 집어 드는 행동입니다. 해당 미션의 행동 비용·통제·운반 제한을 함께 적용하세요.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
