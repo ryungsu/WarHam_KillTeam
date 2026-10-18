@@ -1,6 +1,6 @@
 import {weaponRules} from './weaponRules.ts';
 export const coreSource='https://assets.warhammer-community.com/eng_jun25_kt_lite_rules-5yqs3aeeud-r6homxqjvf.pdf';
-export type RuleHint={id:string;en:string;ko:string;body:string;source?:string};
+export type RuleHint={english?:string;englishKind?:'original'|'summary';id:string;en:string;ko:string;body:string;source?:string};
 export const ruleHints:RuleHint[]=[
 {id:'stun-grenade',en:'Stun Grenade',ko:'섬광 수류탄',body:'1AP. 보이고 6인치 이내인 적 하나를 선택합니다. 그 적과 주변 1인치 이내 모든 요원은 각각 D6을 굴립니다. 3+이면 다음 활성화 종료까지 APL을 1 줄입니다. 적 통제 범위 안이나 장비로 얻은 사용 횟수를 모두 소비했다면 수행할 수 없습니다. 스카웃 워리어의 적응형 장비는 별도 횟수 규칙을 따릅니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
 {id:'smoke-grenade',en:'Smoke Grenade',ko:'연막 수류탄',body:'1AP. 6인치 이내에 보이는 위치, 또는 보이는 지형의 고지에 연막 마커를 놓습니다. 수평 1인치·위로 무제한인 연막을 만듭니다. 연막 안에 완전히 있는 요원과 2인치 초과 떨어진 요원은 서로 시야 방해 상태입니다. 연막 안 표적에게 관통 2·치명 관통 2는 각각 1이 됩니다(서로 2인치 이내 제외). 다음 전략 단계 준비에 D3을 굴려 그 수의 활성화 후 또는 TP 종료 중 먼저 오는 때 제거합니다. 적 통제 범위 안이나 사용 횟수 소진 시 수행할 수 없습니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
@@ -38,7 +38,7 @@ export function resolveRuleHint(text:string):RuleHint|undefined {
  const core=ruleHints.find(h=>[h.en,h.ko].some(v=>v.toLowerCase()===text.toLowerCase()));
  if(core&&!['balanced','ceaseless','seek','seek-light'].includes(core.id))return core;
  const weapon=weaponRules.find(w=>w.re.test(text));
- if(weapon){const lethal=/^Lethal\s*(\d+)\+/i.exec(text);return {id:'weapon-'+text,en:text,ko:text,body:lethal?`공격 주사위 결과가 ${lethal[1]} 이상이면 치명 성공으로 유지합니다. 일반 명중 기준과 별개인 치명 성공 기준입니다.`:weapon.ko,source:coreSource}}
+ if(weapon){const piercingCrit=/PrcCrit|Piercing Crits/i.test(text);const amount=Number(text.match(/\d+/)?.[0]??0);const lethal=/^Lethal\s*(\d+)\+/i.exec(text);return {id:'weapon-'+text,en:text,ko:text,english:piercingCrit?'If the rule is Piercing Crits x, this only comes into effect if you retain any critical successes.':weapon.en,englishKind:piercingCrit?'original':'summary',body:piercingCrit?`공격 주사위를 굴리고 재굴림·결과 변경 등을 적용한 뒤, 치명 성공 주사위가 하나 이상 남아 있으면 상대가 굴릴 방어 주사위를 ${amount||'표시된 수치'}개 줄입니다. 예: PrcCrit1이면 기본 방어 주사위 3개가 2개가 됩니다. 치명 성공이 없으면 줄이지 않습니다. 주사위를 다음 공격까지 보관한다는 뜻은 아닙니다.`:lethal?`공격 주사위 결과가 ${lethal[1]} 이상이면 치명 성공으로 유지합니다. 일반 명중 기준과 별개인 치명 성공 기준입니다.`:weapon.ko,source:coreSource}}
  return core;
 }
 export type RuleMention={start:number;end:number;text:string;hint:RuleHint;weapon:boolean};
