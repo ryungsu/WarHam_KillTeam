@@ -1,17 +1,95 @@
 {
   "source": "https://assets.warhammer-community.com/eng_29-10_kill_team_team_rules_deathwatch-n9uexmycj0-mnutiohz2j.pdf",
-  "method": "Embedded datacard portraits extracted without modification; PNG conversion.",
+  "method": "PDF image drawing coordinates matched to the adjacent DEATHWATCH card title; not resource enumeration order. PNG conversion without alteration.",
+  "verified": "2026-10-18",
   "operatives": [
-    "IMP-DW-SGT",
-    "IMP-DW-AEG",
-    "IMP-DW-BLM",
-    "IMP-DW-BOM",
-    "IMP-DW-DEM",
-    "IMP-DW-DIS",
-    "IMP-DW-GNR",
-    "IMP-DW-BRC",
-    "IMP-DW-HSL",
-    "IMP-DW-HTK",
-    "IMP-DW-MRK"
+    {
+      "id": "IMP-DW-SGT",
+      "page": 1,
+      "image": "Im23",
+      "image_y": 783.54,
+      "card_title": "DEATHWATCH WATCH SERGEANT",
+      "sha256": "60f9f33a5b0bd9d0a5d1b465e85d1a3552661526bd90cda5d4c9fc0925016c9f"
+    },
+    {
+      "id": "IMP-DW-AEG",
+      "page": 1,
+      "image": "Im7",
+      "image_y": 585.59,
+      "card_title": "DEATHWATCH AEGIS VETERAN",
+      "sha256": "008bbf73f939027dc4178a886b3199f3f3d5a0091ad52e39e5c57004a171bedd"
+    },
+    {
+      "id": "IMP-DW-BLM",
+      "page": 1,
+      "image": "Im31",
+      "image_y": 386.7,
+      "card_title": "DEATHWATCH BLADEMASTER VETERAN",
+      "sha256": "3e682d6a60cd263b2892343e89dfd8e117b3ec6b56412929fe1b20f581463531"
+    },
+    {
+      "id": "IMP-DW-BOM",
+      "page": 1,
+      "image": "Im15",
+      "image_y": 188.17,
+      "card_title": "DEATHWATCH BOMBARD VETERAN",
+      "sha256": "ad2e9b2b31a57622472cdec871e68cbff30e60484d048b2b0c650f2fbc28695d"
+    },
+    {
+      "id": "IMP-DW-DEM",
+      "page": 2,
+      "image": "Im7",
+      "image_y": 585.67,
+      "card_title": "DEATHWATCH DEMOLISHER VETERAN",
+      "sha256": "19ab46527e6a72ee9dc5a8a1fabc4a0970bc0a7de530cefbab0d208913966f13"
+    },
+    {
+      "id": "IMP-DW-DIS",
+      "page": 2,
+      "image": "Im31",
+      "image_y": 386.6,
+      "card_title": "DEATHWATCH DISRUPTOR VETERAN",
+      "sha256": "91a34dfd6ee2ae2f130e613aa9506532776df900a81fd1689c2279509cec1ac8"
+    },
+    {
+      "id": "IMP-DW-GNR",
+      "page": 2,
+      "image": "Im15",
+      "image_y": 188.24,
+      "card_title": "DEATHWATCH GUNNER VETERAN",
+      "sha256": "e119be4673a87465fedfbf1d0b098e9f14a58059e48a6e8cd70a37f7bc5ca106"
+    },
+    {
+      "id": "IMP-DW-BRC",
+      "page": 2,
+      "image": "Im23",
+      "image_y": 784.1,
+      "card_title": "DEATHWATCH BREACHER VETERAN",
+      "sha256": "4576f37c863cfffa7d956c74cbf7a91a625ead06cc0d402a28387d84142d0055"
+    },
+    {
+      "id": "IMP-DW-HSL",
+      "page": 3,
+      "image": "Im7",
+      "image_y": 585.11,
+      "card_title": "DEATHWATCH HORDE-SLAYER VETERAN",
+      "sha256": "6cb89c8488e1d54239018173a1817b061052f328608cbb317e13b4e5b21515ab"
+    },
+    {
+      "id": "IMP-DW-HTK",
+      "page": 3,
+      "image": "Im16",
+      "image_y": 783.49,
+      "card_title": "DEATHWATCH HEADTAKER VETERAN",
+      "sha256": "c681984d421b885019aebcdd0dca183930683000032aff97077280caeec16e20"
+    },
+    {
+      "id": "IMP-DW-MRK",
+      "page": 3,
+      "image": "Im24",
+      "image_y": 386.6,
+      "card_title": "DEATHWATCH MARKSMAN VETERAN",
+      "sha256": "86323495a9d97291e83d93d4132b603ec3235fa9d5e08d8bdc1ab8252376fd0e"
+    }
   ]
 }

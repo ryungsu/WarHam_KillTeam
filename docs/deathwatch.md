@@ -8,3 +8,5 @@ Official composition cross-check: https://assets.warhammer-community.com/eng_29-
 The linked October official PDF is an older document: its ammunition options, Veteran Astartes and several ploys differ from the retained JSON. Do not overwrite the community snapshot with those older rules or claim latest balance verification. Korean text translates the retained JSON, with English retained for inspection. Operative portraits are extracted from the linked official Deathwatch datacards.
 
 Included in the roster-home / Deathwatch release.
+
+Portrait audit (2026-10-18): matched all 11 embedded image drawing coordinates to adjacent card titles. Corrected Watch Sergeant, Aegis, Blademaster, Bombard, Disruptor, Gunner and Breacher; remaining four matched. See public/images/operatives/deathwatch-sources.json for page/resource/hash provenance.

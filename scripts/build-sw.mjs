@@ -1,9 +1,11 @@
-import {readdirSync,writeFileSync} from 'node:fs';
+import {readdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const assets=readdirSync('dist/assets').map(f=>'assets/'+f);
 const portraits=readdirSync('dist/images/operatives').map(f=>'images/operatives/'+f);
 const files=['./','index.html','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png','data/teams.json','data/version.json','data/missions.json',...assets,...portraits];
-const version=createHash('sha256').update(JSON.stringify(files)).digest('hex').slice(0,12);
+const cacheHash=createHash('sha256').update(JSON.stringify(files));
+for(const file of files)if(file!=='./')cacheHash.update(readFileSync('dist/'+file));
+const version=cacheHash.digest('hex').slice(0,12);
 writeFileSync('dist/sw.js',`const CACHE='killteam-${version}';const FILES=${JSON.stringify(files)};
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('killteam-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
