@@ -38,7 +38,9 @@ export function resolveRuleHint(text:string):RuleHint|undefined {
  const core=ruleHints.find(h=>[h.en,h.ko].some(v=>v.toLowerCase()===text.toLowerCase()));
  if(core&&!['balanced','ceaseless','seek','seek-light'].includes(core.id))return core;
  const weapon=weaponRules.find(w=>w.re.test(text));
- if(weapon){const piercingCrit=/PrcCrit|Piercing Crits/i.test(text);const amount=Number(text.match(/\d+/)?.[0]??0);const lethal=/^Lethal\s*(\d+)\+/i.exec(text);return {id:'weapon-'+text,en:text,ko:text,english:piercingCrit?'If the rule is Piercing Crits x, this only comes into effect if you retain any critical successes.':weapon.en,englishKind:piercingCrit?'original':'summary',body:piercingCrit?`공격 주사위를 굴리고 재굴림·결과 변경 등을 적용한 뒤, 치명 성공 주사위가 하나 이상 남아 있으면 상대가 굴릴 방어 주사위를 ${amount||'표시된 수치'}개 줄입니다. 예: PrcCrit1이면 기본 방어 주사위 3개가 2개가 됩니다. 치명 성공이 없으면 줄이지 않습니다. 주사위를 다음 공격까지 보관한다는 뜻은 아닙니다.`:lethal?`공격 주사위 결과가 ${lethal[1]} 이상이면 치명 성공으로 유지합니다. 일반 명중 기준과 별개인 치명 성공 기준입니다.`:weapon.ko,source:coreSource}}
+ if(weapon){const piercingCrit=/PrcCrit|Piercing Crits/i.test(text);const amount=Number(text.match(/\d+/)?.[0]??0);const lethal=/^Lethal\s*(\d+)\+/i.exec(text);return {id:'weapon-'+text,en:text,ko:text,english:piercingCrit?'If the rule is Piercing Crits x, this only comes into effect if you retain any critical successes.':weapon.en,englishKind:piercingCrit?'original':'summary',body:piercingCrit?`**번역:** 치명 성공을 하나 이상 남겨두었다면, 방어자가 굴릴 방어 주사위 수를 ${amount||'표시된 수치'}개 줄입니다.
+
+**예시:** PrcCrit1 공격에서 치명 성공이 하나 이상 남았다면 방어 주사위가 3개에서 2개로 줄어듭니다.`:lethal?`공격 주사위 결과가 ${lethal[1]} 이상이면 치명 성공으로 유지합니다. 일반 명중 기준과 별개인 치명 성공 기준입니다.`:weapon.ko,source:coreSource}}
  return core;
 }
 export type RuleMention={start:number;end:number;text:string;hint:RuleHint;weapon:boolean};

@@ -1,9 +1,9 @@
 export const weaponRules=[
  {name:'Balanced',re:/Balanced/i,en:'You can re-roll one attack die.',ko:'공격 주사위 1개를 재굴림할 수 있습니다.'},
  {name:'Brutal',re:/Brutal/i,en:'Your opponent can only block with critical successes.',ko:'상대는 치명 성공으로만 막을 수 있습니다.'},
- {name:'Lethal X+',re:/Lethal/i,en:'Attack dice results equal to or above the specified threshold are critical successes.',ko:'키워드에 표시된 수치 이상인 공격 주사위 결과를 치명 성공으로 유지합니다.'},
+ {name:'Lethal X+',re:/Lethal/i,en:'Attack dice results equal to or above the specified threshold are critical successes.',ko:'키워드에 표시된 수치 이상인 공격 주사위 결과를 치명 성공으로 남겨둡니다.'},
  {name:'Piercing X',re:/^(Prc\d|Piercing \d)/i,en:'The defender collects X fewer defence dice.',ko:'방어자가 굴릴 방어 주사위 수를 표시된 X만큼 줄입니다.'},
- {name:'Piercing Crits X',re:/PrcCrit|Piercing Crits/i,en:'If you retain any critical successes, the defender collects X fewer defence dice.',ko:'치명 성공을 하나 이상 유지했다면 방어 주사위 수를 표시된 X만큼 줄입니다.'},
+ {name:'Piercing Crits X',re:/PrcCrit|Piercing Crits/i,en:'If you retain any critical successes, the defender collects X fewer defence dice.',ko:'치명 성공을 하나 이상 남겨두었다면 방어 주사위 수를 표시된 X만큼 줄입니다.'},
  {name:'Rending',re:/Rending/i,en:'If you retain any critical hits, retain one normal hit as a critical hit instead.',ko:'치명 명중을 유지했다면 일반 명중 1개를 치명 명중으로 바꿉니다.'},
  {name:'Saturate',re:/^(Sat|Saturate)$/i,en:'The defender cannot retain cover saves.',ko:'방어자는 엄폐 성공을 유지할 수 없습니다.'},
  {name:'Ceaseless',re:/Ceaseless/i,en:'You can re-roll any attack dice results of one value (for example all results of 2).',ko:'한 가지 눈금의 공격 주사위 결과를 모두 재굴림할 수 있습니다(예: 2가 나온 주사위 전부).'},
