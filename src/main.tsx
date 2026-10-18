@@ -1,7 +1,8 @@
+import {weaponRules} from './weaponRules';
 import {SelectedEquipment} from './SelectedEquipment';
 import {RuleLanguage} from './RuleMarkdown';
 import {RuleToast} from './RuleToast';
-import {emitRuleHint,ruleHints,translateRuleName} from './ruleHints';
+import {emitRuleHint,ruleHints,resolveRuleHint} from './ruleHints';
 import React,{useState,useEffect,useRef} from 'react';
 import {createRoot} from 'react-dom/client';
 import Markdown from './RuleMarkdown';
@@ -53,7 +54,7 @@ function App(){
  const checks=roster&&team?validate(roster,team):[];
  const fullList=roster?roster.members.map(m=>({key:m.id,op:team?.opTypes.find(o=>o.opTypeId===m.type)})):team?.opTypes.map(o=>({key:o.opTypeId,op:o}))??[];
  const adjacent=(delta:number)=>{const i=fullList.findIndex(x=>x.key===sheet);const next=fullList[(i+delta+fullList.length)%fullList.length];if(next)setSheet(next.key)};
- const rule=(r:string)=>{const normalized=r.trim();const hint=ruleHints.find(h=>h.en.toLowerCase()===normalized.toLowerCase());if(hint){emitRuleHint(hint);return}const hit=weaponRules.find(x=>x.re.test(normalized));emitRuleHint({id:normalized,en:normalized,ko:translateRuleName(normalized),body:hit?.ko??'출처에 있는 키워드입니다. 전체 정의는 공식 핵심 규칙에서 확인하세요.'});};
+ const rule=(r:string)=>{const normalized=r.trim();const hint=resolveRuleHint(normalized);if(hint){emitRuleHint(hint);return}const hit=weaponRules.find(x=>x.re.test(normalized));emitRuleHint({id:normalized,en:normalized,ko:normalized,body:hit?.ko??'출처에 있는 키워드입니다. 전체 정의는 공식 핵심 규칙에서 확인하세요.'});};
  const cards=team?.ploys??[];
  const search=teams.flatMap(t=>t.opTypes.flatMap(o=>[
  {key:o.opTypeId,title:o.opTypeName,kind:'오퍼레이티브',team:t,op:o,description:''},
@@ -85,25 +86,5 @@ function App(){
  {page==='settings'&&<><p className="eyebrow">FIELD KIT</p><h1>설정과 데이터</h1><section className="panel"><h2>백업과 복원</h2><p>로스터는 이 브라우저에 자동 저장됩니다. 기기를 옮길 때 백업 파일을 사용하세요.</p><div className="row"><button className="primary" onClick={backup}>백업 내보내기</button><button onClick={()=>file.current?.click()}>백업 가져오기</button></div><input ref={file} type="file" hidden accept="application/json,.json" onChange={async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>1000000)throw Error('파일은 1MB 이하여야 합니다.');const incoming=parseBackup(JSON.parse(await f.text()),teams);setRosters(rs=>[...incoming.map(r=>({...r,id:uuid(),members:r.members.map(m=>({...m,id:uuid()}))})),...rs]);setNotice(`${incoming.length}개 로스터를 가져왔습니다.`)}catch(err){setError(String(err))}e.target.value=''}}/></section><section className="panel"><h2>언어와 번역</h2><button onClick={()=>setLang(lang==='ko'?'en':'ko')}>{lang==='ko'?'영문으로 전환':'한국어로 전환'}</button><p>한국어 설명은 AI 번역 초안입니다. 미번역 항목은 영문 원문을 표시합니다. 영문 원본은 각 설명 안에서 펼쳐 확인할 수 있습니다.</p></section><section className="panel"><h2>오프라인 데이터</h2><p>데이터를 앱에 포함했습니다. 배포 빌드에서 최초 온라인 접속 후 캐시가 완료되면 오프라인에서도 로스터와 데이터시트를 열 수 있습니다.</p><p>현재 상태: {offline?'오프라인':cached?'오프라인 준비됨':'개발 모드 · 서비스 워커는 배포 빌드에서 작동'}</p></section><section className="panel"><h2>출처와 판본</h2><p>Kill Team 2024 · kt24_v4 스냅샷 · 2026-10-14 다운로드. 커뮤니티 데이터와 최신 공식 규칙의 일치는 별도 확인이 필요합니다.</p><a href="https://github.com/vjosset/killteamjson" target="_blank" rel="noreferrer">vjosset / killteamjson · 데이터 제공</a><br/><a href="https://www.warhammer-community.com/en-gb/downloads/kill-team/" target="_blank" rel="noreferrer">공식 규칙·업데이트</a><p>조건부 장비·전술 효과 및 추가 챕터 전술은 설명을 참고하세요. AR·미션·운드·VP 추적은 1차 범위에 포함하지 않습니다.</p></section></>}
  {team&&(page==='roster'||(page==='reference'&&tab==='weapons'))&&<ScrollNavigator key={`${page}-${roster?.id??team.killteamId}`} entries={(page==='roster'&&roster?[...(roster.equipment.length?[{id:`equipment-${roster.id}`,label:'선택한 장비'}]:[]),...roster.members.map(m=>({id:`operative-${m.id}`,label:memberLabel(team.opTypes.find(o=>o.opTypeId===m.type)!,m,n)}))]:team.opTypes.map(o=>({id:`operative-${o.opTypeId}`,label:n(o.opTypeName)})))}/>} <footer>KILL TEAM 2024 · COMMUNITY REFERENCE<br/>데이터: vjosset / killteamjson · 비공식 프로토타입</footer></main><QuickSearch open={searchOpen} setOpen={setSearchOpen} lang={lang} rule={rule} show={show} entries={[...search,...weaponRules.map(r=>({key:r.name,title:r.name,kind:'규칙',description:r.en,ko:r.ko})),...(missionPack?.cards.map(c=>({key:c.id,title:c.title,kind:'미션',description:c.english||'Official English text has not been verified. The Korean draft is based on the linked Italian community source.',ko:c.koreanDraft,mission:c}))??[])]}/><nav className="bottom-nav" aria-label="하단 탐색">{[['home','⌂','로스터'],['reference','▤','팀 참고'],['missions','⚑','미션'],['battles','⚔','전투 기록'],['settings','⚙','설정']].map(([id,icon,label])=><button className={(page===id||(id==='home'&&['edit','roster','sheet'].includes(page)))?'active':''} key={id} onClick={()=>{if(id==='search'){setSearchOpen(!searchOpen);return}if(id==='reference'){setTab('weapons');setSheet('')}setPage(id)}}><span>{icon}</span>{label}</button>)}</nav><dialog ref={dialog} onCancel={()=>setPopup(null)} onClick={e=>{if(e.target===dialog.current)setPopup(null)}}><div className="heading"><h2>{popup?.title}</h2><button aria-label="팝업 닫기" onClick={()=>setPopup(null)}>✕</button></div>{popup&&body(popup.en,popup.ko)}</dialog></></RuleLanguage.Provider>;
 }
-const weaponRules=[
- {name:'Balanced',re:/Balanced/i,en:'You can re-roll one attack die.',ko:'공격 주사위 1개를 재굴림할 수 있습니다.'},
- {name:'Brutal',re:/Brutal/i,en:'Your opponent can only block with critical successes.',ko:'상대는 치명 성공으로만 막을 수 있습니다.'},
- {name:'Lethal X+',re:/Lethal/i,en:'Attack dice results equal to or above the specified threshold are critical successes.',ko:'키워드에 표시된 수치 이상인 공격 주사위 결과를 치명 성공으로 유지합니다.'},
- {name:'Piercing X',re:/^(Prc\d|Piercing \d)/i,en:'The defender collects X fewer defence dice.',ko:'방어자가 굴릴 방어 주사위 수를 표시된 X만큼 줄입니다.'},
- {name:'Piercing Crits X',re:/PrcCrit|Piercing Crits/i,en:'If you retain any critical successes, the defender collects X fewer defence dice.',ko:'치명 성공을 하나 이상 유지했다면 방어 주사위 수를 표시된 X만큼 줄입니다.'},
- {name:'Rending',re:/Rending/i,en:'If you retain any critical hits, retain one normal hit as a critical hit instead.',ko:'치명 명중을 유지했다면 일반 명중 1개를 치명 명중으로 바꿉니다.'},
- {name:'Saturate',re:/^(Sat|Saturate)$/i,en:'The defender cannot retain cover saves.',ko:'방어자는 엄폐 성공을 유지할 수 없습니다.'},
- {name:'Ceaseless',re:/Ceaseless/i,en:'You can re-roll any attack dice results of one value (for example all results of 2).',ko:'한 가지 눈금의 공격 주사위 결과를 모두 재굴림할 수 있습니다(예: 2가 나온 주사위 전부).'},
- {name:'Relentless',re:/Relentless/i,en:'You can re-roll any of your attack dice.',ko:'원하는 공격 주사위를 재굴림할 수 있습니다.'},
- {name:'Range',re:/Rng|Range/i,en:'The target must be within the range specified by this keyword.',ko:'표적은 키워드에 표시된 사거리 안에 있어야 합니다.'},
- {name:'Heavy (Dash)',re:/Hvy\(Dash\)|Heavy/i,en:'During an activation in which this weapon is used, the operative cannot move, except to Dash. See the full rule for interactions.',ko:'이 무기를 사용하는 활성화 동안 Dash를 제외한 이동을 할 수 없습니다. 세부 상호작용은 공식 전체 규칙을 확인하세요.'},
- {name:'Silent',re:/Silent/i,en:'The operative can perform the Shoot action with this weapon while it has a Conceal order.',ko:'Conceal 명령 상태에서도 이 무기로 Shoot 행동을 수행할 수 있습니다.'},
- {name:'Devastating X',re:/Dev\s*\d|Devastating/i,en:'For each critical success retained, inflict X damage on the target in the Roll Attack Dice step.',ko:'공격 주사위 굴림 단계에서 유지한 치명 성공마다 표적에게 표시된 X만큼 피해를 줍니다.'},
- {name:'Seek Light',re:/Seek Light/i,en:'Light terrain cannot prevent selection of a target with a Conceal order. Cover saves are unaffected.',ko:'Light 지형은 Conceal 명령인 표적 선택을 막지 못합니다. 엄폐 성공 자체에는 영향을 주지 않습니다.'},
- {name:'Blast X',re:/Blast/i,en:'After resolving the primary target, shoot each other operative visible to and within X of it with this weapon, including friendly operatives. See full rules for secondary target requirements.',ko:'주 표적 사격 해결 후 주 표적에게 보이고 표시된 X인치 이내에 있는 다른 오퍼레이티브 각각에게 이 무기로 사격합니다(아군 포함). 부 표적의 세부 조건은 전체 규칙을 확인하세요.'},
- {name:'Torrent X',re:/Tor\s|Torrent/i,en:'Select additional valid targets within X of the primary target and each other, and shoot with this weapon. See full rules for the attack sequence.',ko:'주 표적 및 서로 표시된 X인치 이내에 있는 추가 유효 표적들을 선택하여 이 무기로 사격합니다. 세부 공격 순서는 전체 규칙을 확인하세요.'},
- {name:'Shock',re:/Shock/i,en:'The first critical strike also discards one unresolved normal success of the opponent, or a critical success if there are no normal successes.',ko:'각 해결 과정의 첫 치명타 타격 시 상대의 미해결 일반 성공 1개를 버립니다. 일반 성공이 없다면 치명 성공 1개를 버립니다.'},
- {name:'Stun',re:/Stun/i,en:'If you retain any critical successes, subtract 1 from the target’s APL until the end of its next activation.',ko:'치명 성공을 하나 이상 유지하면 표적의 다음 활성화 종료까지 APL을 1 줄입니다.'},
- {name:'Hot',re:/^Hot$/i,en:'After using this weapon, roll a D6. If lower than its Hit stat, the operative takes damage equal to twice the result.',ko:'이 무기 사용 후 D6을 굴립니다. 무기의 Hit 수치보다 낮으면 사용한 오퍼레이티브가 그 결과의 2배만큼 피해를 받습니다.'},
-];
+
 createRoot(document.getElementById('root')!).render(<App/>);

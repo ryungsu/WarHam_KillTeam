@@ -1,3 +1,4 @@
+import {weaponRules} from './weaponRules.ts';
 export const coreSource='https://assets.warhammer-community.com/eng_jun25_kt_lite_rules-5yqs3aeeud-r6homxqjvf.pdf';
 export type RuleHint={id:string;en:string;ko:string;body:string;source?:string};
 export const ruleHints:RuleHint[]=[
@@ -32,3 +33,20 @@ export const ruleHints:RuleHint[]=[
 export const emitRuleHint=(hint:RuleHint)=>window.dispatchEvent(new CustomEvent('kt-rule-hint',{detail:hint}));
 
 export function translateRuleName(text:string,korean=true){if(!korean)return text;const labels:Record<string,string>={'Piercing Crits':'치명 관통','Heavy':'중화기','Balanced':'균형','Brutal':'잔혹','Ceaseless':'끊임없는 공격','Relentless':'무자비','Lethal':'치명적','Piercing':'관통','Rending':'분쇄','Saturate':'엄폐 무시','Silent':'소음 억제','Devastating':'파괴적','Range':'사거리','Blast':'폭발','Torrent':'분사','Shock':'충격','Stun':'기절','Hot':'과열','Seek Light':'경량 탐색','Seek':'탐색','Accurate':'정확','Rng':'사거리','PrcCrit':'치명 관통','Prc':'관통','Hvy':'중화기','Dev':'파괴적','Tor':'분사','Sat':'엄폐 무시','Dash':'대시'};let output=text;for(const key of Object.keys(labels).sort((a,b)=>b.length-a.length))output=output.replace(new RegExp('\\b'+key+'\\b','gi'),labels[key]);return output}
+
+export function resolveRuleHint(text:string):RuleHint|undefined {
+ const core=ruleHints.find(h=>[h.en,h.ko].some(v=>v.toLowerCase()===text.toLowerCase()));
+ if(core&&!['balanced','ceaseless','seek','seek-light'].includes(core.id))return core;
+ const weapon=weaponRules.find(w=>w.re.test(text));
+ if(weapon){const lethal=/^Lethal\s*(\d+)\+/i.exec(text);return {id:'weapon-'+text,en:text,ko:text,body:lethal?`공격 주사위 결과가 ${lethal[1]} 이상이면 치명 성공으로 유지합니다. 일반 명중 기준과 별개인 치명 성공 기준입니다.`:weapon.ko,source:coreSource}}
+ return core;
+}
+export type RuleMention={start:number;end:number;text:string;hint:RuleHint;weapon:boolean};
+export function ruleMentions(text:string):RuleMention[]{
+ const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+ const aliases=ruleHints.flatMap(h=>[h.en,h.ko]).sort((a,b)=>b.length-a.length).map(escape);
+ const numeric='(?:Lethal\\s+\\d+\\+|(?:Piercing Crits|Piercing|Devastating|Blast|Torrent|Range|Rng|PrcCrit|Prc|Dev|Tor)\\s*\\d+(?:["″])?|(?:Heavy|Hvy)\\s*\\([^)]*\\))';
+ const plain='Lethal|Piercing Crits|Piercing|Rending|Relentless|Saturate|Silent|Devastating|Blast|Torrent|Shock|Stun|Hot|Heavy|Range|Balanced|Ceaseless|Seek Light|Seek';
+ const regex=new RegExp(numeric+'|'+aliases.join('|')+'|'+plain,'gi');const result:RuleMention[]=[];
+ for(const m of text.matchAll(regex)){const start=m.index!,word=m[0];if(/[A-Za-z]/.test(word[0])&&(/[A-Za-z]/.test(text[start-1]??'')||/[A-Za-z]/.test(text[start+word.length]??'')))continue;const hint=resolveRuleHint(word);if(hint)result.push({start,end:start+word.length,text:word,hint,weapon:hint.id.startsWith('weapon-')})}return result;
+}
