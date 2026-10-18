@@ -1,3 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {markPloy,usedPloys} from './ployUsage.ts';
 test('same ploy is marked once per TP and becomes available on the next',()=>{const first=markPloy(undefined,1,'test',true);assert.deepEqual(usedPloys(first,1),['test']);assert.deepEqual(usedPloys(markPloy(first,1,'test',true),1),['test']);assert.deepEqual(usedPloys(first,2),[]);const second=markPloy(first,2,'other',true);assert.deepEqual(usedPloys(second,1),['test']);assert.deepEqual(usedPloys(second,2),['other'])});
 test('cancel preserves other ploys and does not mutate previous undo state',()=>{const first=markPloy(markPloy(undefined,1,'a',true),1,'b',true);const next=markPloy(first,1,'a',false);assert.deepEqual(usedPloys(next,1),['b']);assert.deepEqual(usedPloys(first,1),['a','b']);assert.deepEqual(usedPloys(null,1),[])});
+
+import {confirmPloy} from './ployUsage.ts';
+test('confirmation deducts selected cost and rejects insufficient CP or duplicate use',()=>{assert.equal(confirmPloy(undefined,1,'a',0,1),null);const result=confirmPloy(undefined,1,'a',2,1)!;assert.equal(result.cp,1);assert.deepEqual(usedPloys(result.ployUsage,1),['a']);assert.equal(confirmPloy(result.ployUsage,1,'a',1,1),null);assert.equal(confirmPloy(undefined,1,'free',0,0)?.cp,0)});
