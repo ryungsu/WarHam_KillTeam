@@ -3,6 +3,7 @@ import {MissionText} from './MissionText';
 import type {Team,Roster} from './types';
 import type {MissionCard,MissionPack} from './missions';
 import {eligibleTac,missionKo,practiceCrit} from './missions';
+import {memberLabel} from './memberLabel';
 import {CompactDatasheet} from './CompactDatasheet';
 import {ScrollNavigator,revealCard} from './ScrollNavigator';
 import {texts} from './translations';
@@ -38,6 +39,6 @@ export function MissionDesk({pack,teams,rosters,name:n,lang,rule,show,storageKey
  </div></section><section className="mission-sheets"><div className="heading"><h2>내 데이터시트</h2><small>페이지 이동 없이 펼쳐보기</small></div>{team&&session.roster?.members.map((m,i)=>{const o=team.opTypes.find(o=>o.opTypeId===m.type);return o?<CompactDatasheet key={m.id} operative={o} cardKey={`mission-${m.id}`} index={i} member={m} team={team} roster={session.roster!} name={n} lang={lang} rule={rule} show={show} abilityText={(id,name)=>texts[id]??(name==='Astartes'&&team.killteamId==='IMP-AOD'?texts['IMP-AOD-CPT-A-AS']:name==='Chapter Veteran'?texts['IMP-AOD-ISGT-A-CVET']:undefined)}/>:null})}{!session.roster&&<div className="empty">로스터를 선택하면 미션과 데이터시트를 함께 볼 수 있습니다.</div>}{session.roster?.members.length===0&&<p>선택한 로스터에 오퍼레이티브가 없습니다.</p>}{team&&<details className="panel"><summary>팀 플로이</summary>{team.ploys.map(p=><button className="tag" key={p.ployId} onClick={()=>show(n(p.ployName),p.description,p.ployId)}>{n(p.ployName)}</button>)}</details>}</section><section className="mission-assist">{team&&session.roster?<BattleSituations team={team} roster={session.roster} name={n} show={show} rule={rule}/>:<div className="empty">게임 준비에서 로스터를 선택하면 전투 보조가 표시됩니다.</div>}</section></div>
  <details className="panel mission-audit"><summary>전체 카드 검증 현황</summary>{pack.cards.map(c=><div className="mission-audit-row" key={c.id}><span>{label(c)}</span><span>{c.status==='official-text'?'본문 대조 완료':'본문 대조 대기'}</span>{c.status==='official-text'&&<button onClick={()=>show(label(c),c.english,undefined,missionKo[c.id])}>설명</button>}</div>)}</details>
  </>}
- {session.roster&&team&&<ScrollNavigator onNavigate={id=>{setDrawer('');setMobilePane('sheets');requestAnimationFrame(()=>revealCard(id))}} entries={session.roster.members.filter(m=>team.opTypes.some(o=>o.opTypeId===m.type)).map(m=>({id:`operative-mission-${m.id}`,label:n(team.opTypes.find(o=>o.opTypeId===m.type)!.opTypeName)}))}/>}
+ {session.roster&&team&&<ScrollNavigator onNavigate={id=>{setDrawer('');setMobilePane('sheets');requestAnimationFrame(()=>revealCard(id))}} entries={session.roster.members.filter(m=>team.opTypes.some(o=>o.opTypeId===m.type)).map(m=>({id:`operative-mission-${m.id}`,label:memberLabel(team.opTypes.find(o=>o.opTypeId===m.type)!,m,n)}))}/>}
  </div>;
 }
