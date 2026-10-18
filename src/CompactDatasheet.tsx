@@ -1,13 +1,14 @@
+import {translateRuleName} from './ruleHints';
 import type {Operative,Member,Team,Roster} from './types';
 import {isLeader} from './rules';
 import {texts,tactics} from './translations';
-import Markdown from 'react-markdown';
+import Markdown from './RuleMarkdown';
 import {WeaponBadge} from './WeaponBadge';
 import {OperativePortrait} from './OperativePortrait';
 type Props={operative:Operative;cardKey:string;index:number;member?:Member;team:Team;roster?:Roster;name:(s:string)=>string;lang:'ko'|'en';rule:(s:string)=>void;show:(title:string,en:string,id?:string,ko?:string)=>void;abilityText:(id:string,name:string)=>string|undefined};
 export function CompactDatasheet({operative:o,cardKey,index,member:m,team,roster,name:n,lang,rule,show,abilityText}:Props){
  const weapons=o.weapons.filter(w=>!m||m.loadout.includes(w.wepId));
- const rules=(wr:string)=><span className="ds-rules">{wr.split(',').filter(Boolean).map((r,i)=><button key={i} onClick={()=>rule(r)}>{r.trim()}</button>)}</span>;
+ const rules=(wr:string)=><span className="ds-rules">{wr.split(',').filter(Boolean).map((r,i)=><button key={i} onClick={()=>rule(r)}>{translateRuleName(r.trim(),lang==='ko')}</button>)}</span>;
  const selectedTactics=o.options.filter(option=>!m||roster?.tactics.includes(option.optionId.split('-CT-')[1])||m.veteranTactic===option.optionId.split('-CT-')[1]);
  return <details className="operative-accordion compact-datasheet" id={`operative-${cardKey}`}>
   <summary className="ds-header"><span className="ds-title"><small>{String(index+1).padStart(2,'0')} / {isLeader(o)?'LEADER':'OPERATIVE'}</small><strong className="ds-name-with-icon"><span>{n(o.opTypeName)}</span><WeaponBadge operative={o} member={m} name={n} onInspect={label=>show(label,label,undefined,`선택 무장: ${label}`)}/></strong><small>{o.opTypeName}</small></span><OperativePortrait id={o.opTypeId} name={n(o.opTypeName)} missile={!!m?.loadout.includes(o.weapons.find(w=>w.wepName==='Missile Launcher')?.wepId??'')}/><span className="ds-statline">{[['APL',o.APL,'apl'],['MOVE',o.MOVE,'move'],['SAVE',o.SAVE,'save'],['WOUNDS',o.WOUNDS,'wounds']].map(([label,value,icon])=><span key={label}><b>{label}</b><span className="ds-stat-value"><StatIcon type={String(icon)}/><strong>{value}</strong></span></span>)}</span><span className="expand-indicator" aria-hidden="true"/></summary>

@@ -1,0 +1,5 @@
+import Markdown from './RuleMarkdown';
+import {useEffect,useState} from 'react';
+import {createPortal} from 'react-dom';
+import {coreSource,type RuleHint} from './ruleHints';
+export function RuleToast(){const [hint,setHint]=useState<RuleHint|null>(null);useEffect(()=>{const open=(e:Event)=>setHint((e as CustomEvent<RuleHint>).detail);const key=(e:KeyboardEvent)=>{if(e.key==='Escape'){setHint(null)}};window.addEventListener('kt-rule-hint',open);window.addEventListener('keydown',key);return()=>{window.removeEventListener('kt-rule-hint',open);window.removeEventListener('keydown',key)}},[]);if(!hint)return null;return createPortal(<aside className="rule-toast" aria-label="규칙 빠른 설명" aria-live="polite" onClick={e=>e.stopPropagation()}><div className="rule-toast-heading"><strong>{hint.ko} <small>{hint.en}</small></strong><button type="button" aria-label="규칙 설명 닫기" onClick={()=>setHint(null)}>×</button></div><Markdown>{hint.body}</Markdown><a href={hint.source??coreSource} target="_blank" rel="noreferrer">출처 · 규칙 요약 ↗</a></aside>,document.querySelector('dialog[open]')??document.body)}
