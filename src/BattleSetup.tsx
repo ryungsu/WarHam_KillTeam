@@ -1,13 +1,14 @@
+import {communityMaps} from './communityMaps';
 import {MapPreview} from './MapPreview';
 import {MissionText} from './MissionText';
 import {useState} from 'react';
 import type {MissionPack} from './missions';
 const zones=[['Volkus','볼쿠스'],['Tomb World','툼 월드'],['Gallowdark','갈로우다크'],['Bheta-Decima','베타 데시마'],['Octarius','옥타리우스'],['Non-specific','일반 전장']];
-const mapOptions=zones.flatMap(([id])=>Array.from({length:6},(_,i)=>`${id} · 맵 ${i+1}`));
+const mapOptions=[...zones.flatMap(([id])=>Array.from({length:6},(_,i)=>`${id} · 맵 ${i+1}`)),...communityMaps.map(m=>m.value)];
 export function MapPicker({value,onChange}:{value:string;onChange:(v:string)=>void}){
  const custom=!!value&&!mapOptions.includes(value);
  const [editing,setEditing]=useState(custom);
- return <div className="setup-picker"><label>맵 / 킬존<select value={editing?'custom':value} onChange={e=>{setEditing(e.target.value==='custom');if(e.target.value!=='custom')onChange(e.target.value);else if(!custom)onChange('')}}><option value="">맵 선택…</option>{zones.map(([id,label])=><optgroup key={id} label={`${label} · ${id}`}>{Array.from({length:6},(_,i)=><option key={i} value={`${id} · 맵 ${i+1}`}>{label} · 맵 {i+1}</option>)}</optgroup>)}<option value="custom">직접 입력 / 커뮤니티 맵</option></select></label>{editing&&<label>직접 입력한 맵<input maxLength={120} placeholder="예: 커뮤니티 맵 이름 · 배치도 번호" value={value} onChange={e=>onChange(e.target.value)}/></label>}<p className="hint">맵을 선택하면 아래에 배치도가 바로 표시됩니다. 이미지를 터치하면 확대할 수 있습니다.</p><MapPreview value={value}/></div>;
+ return <div className="setup-picker"><label>맵 / 킬존<select value={editing?'custom':value} onChange={e=>{setEditing(e.target.value==='custom');if(e.target.value!=='custom')onChange(e.target.value);else if(!custom)onChange('')}}><option value="">맵 선택…</option><optgroup label="커뮤니티 추천 5개 · 인기 순위 아님">{communityMaps.map(m=><option key={m.value} value={m.value}>{m.name}</option>)}</optgroup>{zones.map(([id,label])=><optgroup key={id} label={`${label} · ${id}`}>{Array.from({length:6},(_,i)=><option key={i} value={`${id} · 맵 ${i+1}`}>{label} · 맵 {i+1}</option>)}</optgroup>)}<option value="custom">직접 입력 / 커뮤니티 맵</option></select></label>{editing&&<label>직접 입력한 맵<input maxLength={120} placeholder="예: 커뮤니티 맵 이름 · 배치도 번호" value={value} onChange={e=>onChange(e.target.value)}/></label>}<p className="hint">맵을 선택하면 아래에 배치도가 바로 표시됩니다. 이미지를 터치하면 확대할 수 있습니다.</p><MapPreview value={value}/></div>;
 }
 export function MissionPicker({pack,value,onChange}:{pack:MissionPack|null;value:string;onChange:(v:string)=>void}){
  const [mode,setMode]=useState('all');

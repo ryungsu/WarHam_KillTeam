@@ -1,0 +1,69 @@
+{
+  "selection": "Editorial starter selection, NOT measured popularity ranking. First three standard Volkus layouts and first two standard Gallowdark layouts to cover open and close-quarters play without double sets or GD+ rules.",
+  "publisher": "https://www.squad-games.net/downloads",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Full PDF pages rendered to JPEG; no content removed. App adds attribution separately.",
+  "evidence": "ATC 2025 packet states use of Squad Games asymmetric Gallowdark pack; this is pack-level evidence, not usage data for individual maps.",
+  "maps": [
+    {
+      "value": "Squad Games Volkus · 맵 1",
+      "name": "SG 볼쿠스 · 맵 1",
+      "image": "sg-volkus-1.jpg",
+      "number": 1,
+      "source": "https://www.squad-games.net/_files/ugd/2ab2d1_e0cdce20bfdd4a019448a957369a241c.pdf#page=5",
+      "page": 5,
+      "zone": "volkus",
+      "license": "CC BY 4.0",
+      "credit": "Designed by Squad-Games – www.squad-games.net",
+      "note": "기본 볼쿠스 지형 1세트 사용 · Double/Light 변형 제외"
+    },
+    {
+      "value": "Squad Games Volkus · 맵 2",
+      "name": "SG 볼쿠스 · 맵 2",
+      "image": "sg-volkus-2.jpg",
+      "number": 2,
+      "source": "https://www.squad-games.net/_files/ugd/2ab2d1_e0cdce20bfdd4a019448a957369a241c.pdf#page=6",
+      "page": 6,
+      "zone": "volkus",
+      "license": "CC BY 4.0",
+      "credit": "Designed by Squad-Games – www.squad-games.net",
+      "note": "기본 볼쿠스 지형 1세트 사용 · Double/Light 변형 제외"
+    },
+    {
+      "value": "Squad Games Volkus · 맵 3",
+      "name": "SG 볼쿠스 · 맵 3",
+      "image": "sg-volkus-3.jpg",
+      "number": 3,
+      "source": "https://www.squad-games.net/_files/ugd/2ab2d1_e0cdce20bfdd4a019448a957369a241c.pdf#page=7",
+      "page": 7,
+      "zone": "volkus",
+      "license": "CC BY 4.0",
+      "credit": "Designed by Squad-Games – www.squad-games.net",
+      "note": "기본 볼쿠스 지형 1세트 사용 · Double/Light 변형 제외"
+    },
+    {
+      "value": "Squad Games Gallowdark · 맵 1",
+      "name": "SG 갈로우다크 · 맵 1",
+      "image": "sg-gallowdark-1.jpg",
+      "number": 1,
+      "source": "https://www.squad-games.net/_files/ugd/2ab2d1_56086a9e95084802998e1fcb91c1a4c2.pdf#page=6",
+      "page": 6,
+      "zone": "gallowdark",
+      "license": "CC BY 4.0",
+      "credit": "Designed by Squad-Games – www.squad-games.net",
+      "note": "기본 갈로우다크 지형 사용 · Gallowdark+ 변형 제외"
+    },
+    {
+      "value": "Squad Games Gallowdark · 맵 2",
+      "name": "SG 갈로우다크 · 맵 2",
+      "image": "sg-gallowdark-2.jpg",
+      "number": 2,
+      "source": "https://www.squad-games.net/_files/ugd/2ab2d1_56086a9e95084802998e1fcb91c1a4c2.pdf#page=7",
+      "page": 7,
+      "zone": "gallowdark",
+      "license": "CC BY 4.0",
+      "credit": "Designed by Squad-Games – www.squad-games.net",
+      "note": "기본 갈로우다크 지형 사용 · Gallowdark+ 변형 제외"
+    }
+  ]
+}
