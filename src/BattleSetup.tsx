@@ -1,3 +1,4 @@
+import {MapPreview} from './MapPreview';
 import {MissionText} from './MissionText';
 import {useState} from 'react';
 import type {MissionPack} from './missions';
@@ -6,7 +7,7 @@ const mapOptions=zones.flatMap(([id])=>Array.from({length:6},(_,i)=>`${id} · �
 export function MapPicker({value,onChange}:{value:string;onChange:(v:string)=>void}){
  const custom=!!value&&!mapOptions.includes(value);
  const [editing,setEditing]=useState(custom);
- return <div className="setup-picker"><label>맵 / 킬존<select value={editing?'custom':value} onChange={e=>{setEditing(e.target.value==='custom');if(e.target.value!=='custom')onChange(e.target.value);else if(!custom)onChange('')}}><option value="">맵 선택…</option>{zones.map(([id,label])=><optgroup key={id} label={`${label} · ${id}`}>{Array.from({length:6},(_,i)=><option key={i} value={`${id} · 맵 ${i+1}`}>{label} · 맵 {i+1}</option>)}</optgroup>)}<option value="custom">직접 입력 / 커뮤니티 맵</option></select></label>{editing&&<label>직접 입력한 맵<input maxLength={120} placeholder="예: 커뮤니티 맵 이름 · 배치도 번호" value={value} onChange={e=>onChange(e.target.value)}/></label>}<p className="hint">Approved Ops 2025 배치도 번호를 기록합니다. 실제 지형 배치는 공식 카드·Companion을 확인하세요.</p></div>;
+ return <div className="setup-picker"><label>맵 / 킬존<select value={editing?'custom':value} onChange={e=>{setEditing(e.target.value==='custom');if(e.target.value!=='custom')onChange(e.target.value);else if(!custom)onChange('')}}><option value="">맵 선택…</option>{zones.map(([id,label])=><optgroup key={id} label={`${label} · ${id}`}>{Array.from({length:6},(_,i)=><option key={i} value={`${id} · 맵 ${i+1}`}>{label} · 맵 {i+1}</option>)}</optgroup>)}<option value="custom">직접 입력 / 커뮤니티 맵</option></select></label>{editing&&<label>직접 입력한 맵<input maxLength={120} placeholder="예: 커뮤니티 맵 이름 · 배치도 번호" value={value} onChange={e=>onChange(e.target.value)}/></label>}<p className="hint">옥타리우스 1~6번은 공식 배치도 이미지가 연결되어 있습니다. 다른 맵은 번호 기록용입니다.</p><MapPreview value={value}/></div>;
 }
 export function MissionPicker({pack,value,onChange}:{pack:MissionPack|null;value:string;onChange:(v:string)=>void}){
  const [mode,setMode]=useState('all');

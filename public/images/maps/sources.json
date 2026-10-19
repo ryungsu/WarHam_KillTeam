@@ -1,0 +1,42 @@
+{
+  "source": "https://assets.warhammer-community.com/eng_kt_approved_ops_2025_tournament_companion-vzhkxcroju-703pddn5jk.pdf",
+  "maps": [
+    {
+      "file": "octarius-1.jpg",
+      "pdfPage": 9,
+      "position": "top",
+      "map": 1
+    },
+    {
+      "file": "octarius-2.jpg",
+      "pdfPage": 9,
+      "position": "bottom",
+      "map": 2
+    },
+    {
+      "file": "octarius-3.jpg",
+      "pdfPage": 10,
+      "position": "top",
+      "map": 3
+    },
+    {
+      "file": "octarius-4.jpg",
+      "pdfPage": 10,
+      "position": "bottom",
+      "map": 4
+    },
+    {
+      "file": "octarius-5.jpg",
+      "pdfPage": 11,
+      "position": "top",
+      "map": 5
+    },
+    {
+      "file": "octarius-6.jpg",
+      "pdfPage": 11,
+      "position": "bottom",
+      "map": 6
+    }
+  ],
+  "note": "Rendered official Octarius layouts; includes original map number, terrain, objectives and drop zones. Other zones are not inferred from these layouts."
+}
