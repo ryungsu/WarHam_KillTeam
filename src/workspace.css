@@ -53,3 +53,5 @@
 .community-map-credit{margin-top:10px;border-top:1px solid #765139;padding-top:8px;font-size:12px;line-height:1.6}.community-map-credit p{margin:4px 0}.community-map-credit>a{display:block;color:var(--accent);font-size:12px}
 
 .ploy-usage-card.is-active{border-color:#c98649;background:#34291f}.ploy-usage-card.is-active .ploy-rule-button{opacity:1}.ploy-state-badge{display:inline-block;border:1px solid #907050;border-radius:6px;padding:8px;color:#f0bd8a;font-weight:700;text-align:center;flex-shrink:0}
+
+.battle-tac-op{margin:0 0 14px;border-top:3px solid var(--orange)}.battle-tac-op .heading{flex-wrap:wrap;gap:6px}.battle-tac-summary{display:grid;gap:5px;margin:8px 0}.battle-tac-summary>strong{color:var(--accent);font-size:18px}.battle-tac-summary>small,.battle-tac-summary>span{font-size:12px;color:var(--muted)}.tac-current-rules{margin:12px 0;border-block:1px solid var(--line);padding:12px 0}.tac-current-rules>summary{font-weight:700;color:var(--accent);min-height:32px}.battle-tac-actions{display:flex;flex-wrap:wrap;gap:10px}.battle-tac-actions button{min-height:44px}.battle-tac-op .tac-op-picker{margin-top:14px}
