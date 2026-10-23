@@ -12,3 +12,5 @@ test('Flank draft includes TP4-only consecutive-control correction, Dominate inc
 test('ambiguous official Sweep & Clear paragraph is not marked verified',()=>assert.equal(pack.cards.find(c=>c.id==='tac-seek-01')!.status,'catalog-only'));
 
 test('all 22 missions have Korean content and draft sources stay distinct from verified English',()=>{for(const c of pack.cards){assert.ok(missionKo[c.id]||c.koreanDraft,c.id);if(c.status!=='official-text'){assert.ok(c.koreanDraft);assert.ok(c.sourceText);assert.equal(c.sourceLanguage,'it');assert.equal(c.english,'')}}});
+
+test("Aquilon Tac Ops use Recon and Seek and Destroy",()=>{const cards=pack.cards.filter(c=>eligibleTac(c,"IMP-TEMPAQ"));assert.equal(cards.length,6);assert.ok(cards.some(c=>c.archetype==="recon"));assert.ok(!cards.some(c=>c.archetype==="security"))});

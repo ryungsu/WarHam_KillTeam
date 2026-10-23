@@ -22,3 +22,9 @@ test('Watch Sergeant grants a fifth equipment selection only while selected',()=
 
 import {allowedArchetypes} from './missions.ts';
 test('Deathwatch missions include Security and Seek and Destroy',()=>assert.deepEqual(allowedArchetypes('IMP-DW'),allowedArchetypes('IMP-AOD')));
+
+const aq=teams.find(t=>t.killteamId==='IMP-TEMPAQ')!;
+const aqRoster=()=>roster(aq,['Aquilon Tempestor','Aquilon Servo-Sentry','Aquilon Grenadier','Aquilon Gunfighter','Aquilon Gunner','Aquilon Gunner','Aquilon Marksman','Aquilon Precursor',...Array(3).fill('Aquilon Trooper')]);
+test('Aquilon requires 11 models including exactly one sentry and leader',()=>{const r=aqRoster();r.members[5].loadout=loadouts(aq.opTypes.find(o=>o.opTypeName==='Aquilon Gunner')!)[1];assert.deepEqual(validate(r,aq),[]);r.members[1]={...r.members[1],type:aq.opTypes.find(o=>o.opTypeName==='Aquilon Trooper')!.opTypeId,loadout:loadouts(aq.opTypes.find(o=>o.opTypeName==='Aquilon Trooper')!)[0]};assert.ok(validate(r,aq).some(e=>e.includes('센트리')))});
+test('Aquilon duplicate gunner weapons are illegal but each weapon once is legal',()=>{assert.ok(validate(aqRoster(),aq).some(e=>e.includes('Melta Carbine')))});
+test('Aquilon leaders and sentries cannot carry all optional weapons together',()=>{for(const type of ['Aquilon Tempestor','Aquilon Servo-Sentry']){const o=aq.opTypes.find(o=>o.opTypeName===type)!;assert.equal(loadouts(o).length,3);assert.ok(loadouts(o).every(l=>l.length===(type==='Aquilon Tempestor'?2:1)))}assert.equal(loadouts(aq.opTypes.find(o=>o.opTypeName==='Aquilon Gunner')!).length,2)});

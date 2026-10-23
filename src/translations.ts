@@ -1,3 +1,4 @@
+import {aquilonNames,aquilonTexts} from './aquilonTranslations';
 export const names:Record<string,string>={
 'Angels Of Death':'죽음의 천사','Scout Squad':'스카웃 스쿼드','Space Marine Captain':'스페이스 마린 캡틴','Assault Intercessor Sergeant':'어썰트 인터세서 서전트','Intercessor Sergeant':'인터세서 서전트','Eliminator Sniper':'엘리미네이터 스나이퍼','Assault Intercessor Grenadier':'어썰트 인터세서 그레네디어','Assault Intercessor Warrior':'어썰트 인터세서 워리어','Heavy Intercessor Gunner':'헤비 인터세서 거너','Intercessor Gunner':'인터세서 거너','Intercessor Warrior':'인터세서 워리어','Scout Sergeant':'스카웃 서전트','Scout Heavy Gunner':'스카웃 헤비 거너','Scout Hunter':'스카웃 헌터','Scout Sniper':'스카웃 스나이퍼','Scout Tracker':'스카웃 트래커','Scout Warrior':'스카웃 워리어',
 'Plasma Pistol':'플라즈마 피스톨','Power Fist':'파워 피스트','Hand Flamer':'핸드 플레이머','Heavy Bolt Pistol':'헤비 볼트 피스톨','Chainsword':'체인소드','Power Weapon':'파워 웨폰','Thunder Hammer':'썬더 해머','Auto Bolt Rifle':'오토 볼트 라이플','Bolt Rifle':'볼트 라이플','Stalker Bolt Rifle':'스토커 볼트 라이플','Fists':'주먹','Bolt Pistol':'볼트 피스톨','Bolt Sniper Rifle':'볼트 스나이퍼 라이플','Frag Grenade':'프랙 수류탄','Krak Grenade':'크랙 수류탄','Heavy Bolter':'헤비 볼터','Auxiliary Grenade Launcher':'보조 유탄 발사기','Astartes Shotgun':'아스타르테스 샷건','Boltgun':'볼트건','Missile Launcher':'미사일 런처','Combat Blade':'컴뱃 블레이드','Sniper Rifle':'스나이퍼 라이플','Standard':'일반','Supercharge':'과충전',
@@ -109,3 +110,6 @@ Object.assign(texts,{
 'IMP-DW-SST':'터닝 포인트마다 한 번, 아군 데스워치의 활성화에 사용할 수 있습니다. 그 활성화 중 임무 행동 하나의 비용이 1AP 감소합니다. 적 통제 범위 안에서도 그 임무 행동을 수행할 수 있지만, 그렇게 했다면 수행 후 상대와 굴림 대결을 합니다. 상대가 이기면 이 장비는 남은 전투 동안 사용할 수 없습니다.',
 'IMP-DW-SVBSC':'각 아군 데스워치의 활성화마다 한 번, 적 통제 범위 밖에서 행동 전후에 사용할 수 있습니다. 다음 하나를 선택합니다.\n- 잃은 체력을 최대 D3 회복.\n- APL 능력치 변경을 모두 제거.\n- Neutron Fragment·Poison·Terrorchem 토큰 중 하나 제거. 해당 시 활성화 효과를 처리하기 전에 제거합니다.',
 'IMP-DW-AR':'전투마다 한 번, 한 터닝 포인트 동안 특수탄 진영 규칙을 최대 두 번의 사격 행동에 사용할 수 있습니다. 두 번에 서로 다른 무기 규칙을 선택해야 합니다. 이 규칙은 일반 특수탄 제한보다 우선합니다.'});
+
+Object.assign(names,aquilonNames);
+Object.assign(texts,aquilonTexts);

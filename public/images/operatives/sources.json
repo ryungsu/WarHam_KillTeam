@@ -82,5 +82,53 @@
     "page": 14,
     "pdfImage": "Im10",
     "source": "official Kill Team team PDF"
+  },
+  {
+    "id": "IMP-TEMPAQ-TEMP",
+    "page": 1,
+    "pdfImage": "Im22.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-GRN",
+    "page": 1,
+    "pdfImage": "Im30.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-GF",
+    "page": 1,
+    "pdfImage": "Im14.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-GNR",
+    "page": 2,
+    "pdfImage": "Im23.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-MRK",
+    "page": 2,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-PRE",
+    "page": 2,
+    "pdfImage": "Im31.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-SS",
+    "page": 2,
+    "pdfImage": "Im15.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
+  },
+  {
+    "id": "IMP-TEMPAQ-TRP",
+    "page": 3,
+    "pdfImage": "Im9.jp2",
+    "source": "https://assets.warhammer-community.com/eng_17-12_kt_tempestus_aquilons_online_rules-lmtd3jnxje-xwnybrafnr.pdf"
   }
 ]

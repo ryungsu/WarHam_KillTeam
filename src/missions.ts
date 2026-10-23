@@ -9,6 +9,6 @@ export const missionKo:Record<string,string>={
 'tac-sec-03':'**공개:** 처음 특사를 선택할 때.\n\n**선택:** 첫 TP 이후 각 TP의 전략 책략으로 다음 전략 단계 Ready까지 유지할 아군 특사 1명을 선택합니다. 이전 TP에 선택했던 모델이나 Kill Op에서 무시되는 모델은 선택할 수 없습니다.\n\n**득점:** 첫 TP 이후 종료 시 특사가 적 영역 완전히 안에 있고 적 통제 범위 밖이면 1VP. 또한 이번 TP에 운드를 하나도 잃지 않았다면 대신 2VP.',
 'tac-seek-03':'**공개:** 아군이 처음 적을 전투불능으로 만들 때.\n\n**토큰:** 적을 전투불능으로 만든 아군에게 Dominate 토큰 1개를 줍니다. 적 Wounds 능력치가 12 이상이면 **2개**를 줍니다.\n\n**득점:** TP3·TP4 종료 시 전장에 있고 전투불능이 아닌 아군의 토큰을 제거할 수 있습니다. 제거한 토큰마다 1VP. TP당 최대 3VP.',
 };
-export const allowedArchetypes=(teamId:string)=>(teamId==='IMP-AOD'||teamId==='IMP-DW')?['security','seek-and-destroy','seek','seek_destroy']:teamId==='IMP-SCT'?['infiltration','infil','recon']:[];
+export const allowedArchetypes=(teamId:string)=>(teamId==='IMP-AOD'||teamId==='IMP-DW')?['security','seek-and-destroy','seek','seek_destroy']:teamId==='IMP-TEMPAQ'?['recon','seek-and-destroy','seek','seek_destroy']:teamId==='IMP-SCT'?['infiltration','infil','recon']:[];
 export function eligibleTac(card:MissionCard,teamId:string){return card.kind==='tac'&&allowedArchetypes(teamId).includes(card.archetype??'')}
 export function practiceCrit(cards:MissionCard[],random=Math.random){const options=cards.filter(c=>c.kind==='crit'&&c.status==='official-text');if(!options.length)return undefined;return options[Math.min(options.length-1,Math.floor(random()*options.length))]}

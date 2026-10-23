@@ -1,10 +1,16 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const raw=readFileSync(new URL('../data-original/upstream.json',import.meta.url),'utf8');
-const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT','IMP-DW'].includes(t.killteamId));
+const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT','IMP-DW','IMP-TEMPAQ'].includes(t.killteamId));
 mkdirSync(new URL('../data-original/',import.meta.url),{recursive:true});
 writeFileSync(new URL('../data-original/teams.json',import.meta.url),JSON.stringify(teams,null,2));
 for(const t of teams){
+ if(t.killteamId==='IMP-TEMPAQ'){
+  // Official datacards clarify Salvo targeting; keep upstream English in data-original.
+  const salvo=t.opTypes.flatMap(o=>o.abilities).find(a=>a.abilityName==='*Salvo');
+  salvo.description="Select up to two different valid targets that aren't within control range of friendly operatives. Shoot with this weapon against both of them in an order of your choice (roll each sequence separately).";
+ }
+
  // The upstream represents one equipment selection as two independent grenade records.
  // Expose three explicit, legal pairs so one equipment slot always grants exactly two.
  for(const [group,a,b] of [['UG','SMK','STN'],['XG','FRAG','KRAK']]){

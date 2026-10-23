@@ -7,6 +7,9 @@ export function loadouts(op:Operative):string[][] {
  else if(n==='intercessor sergeant') sets=rifle.flatMap(r=>melee.map(m=>[r,m]));
  else if(n==='intercessor gunner') sets=rifle.map(r=>[r,'Auxiliary Grenade Launcher','Fists']);
  else if(n==='intercessor warrior') sets=rifle.map(r=>[r,'Fists']);
+ else if(n==='aquilon tempestor') sets=[['Hot-Shot Laspistol','Power Weapon'],['Relic Bolt Pistol','Chainsword'],['Hot-Shot Lascarbine','Fists']];
+ else if(n==='aquilon gunner') sets=[['Melta Carbine','Fists'],['Plasma Carbine','Fists']];
+ else if(n==='aquilon servo-sentry') sets=[['Flamer'],['Grenade Launcher'],['Hot-Shot Volley Gun']];
  else if(n==='scout sergeant') sets=[['Astartes Shotgun','Fists'],['Boltgun','Fists'],['Bolt Pistol','Chainsword']];
  else if(n==='scout warrior') sets=[['Astartes Shotgun','Fists'],['Boltgun','Fists'],['Bolt Pistol','Combat Blade']];
  else if(n==='scout heavy gunner') sets=[['Bolt Pistol','Heavy Bolter','Fists'],['Bolt Pistol','Missile Launcher','Fists']];
@@ -14,7 +17,7 @@ export function loadouts(op:Operative):string[][] {
  return sets.map(s=>s.map(n=>{const w=op.weapons.find(w=>w.wepName.toLowerCase()===n.toLowerCase());if(!w)throw new Error(`Missing weapon ${op.opTypeId}: ${n}`);return w.wepId}));
 }
 export const isLeader=(op:Operative)=>op.keywords.split(',').some(k=>k.trim()==='LEADER');
-export const teamSize=(t:Team)=>t.killteamId==='IMP-DW'?5:t.killteamId==='IMP-AOD'?6:9;
+export const teamSize=(t:Team)=>t.killteamId==='IMP-TEMPAQ'?11:t.killteamId==='IMP-DW'?5:t.killteamId==='IMP-AOD'?6:9;
 export const equipmentLimit=(r:Roster,t:Team)=>4+(r.members.some(m=>t.opTypes.find(o=>o.opTypeId===m.type)?.abilities.some(a=>a.abilityName==='Adaptable Armoury'))?1:0);
 export function validate(r:Roster,t:Team):string[]{
  const errors:string[]=[];const total=teamSize(t);
@@ -22,7 +25,7 @@ export function validate(r:Roster,t:Team):string[]{
  const ops=r.members.map(m=>t.opTypes.find(o=>o.opTypeId===m.type));
  if(t.killteamId!=='IMP-DW'&&ops.filter(o=>o&&isLeader(o)).length!==1)errors.push('리더를 정확히 1명 선택하세요.');
  for(const op of t.opTypes){const count=ops.filter(o=>o?.opTypeId===op.opTypeId).length;
-  const max=op.opTypeName.includes('Warrior')?total:op.opTypeName==='Scout Heavy Gunner'?2:1;
+  const max=(op.opTypeName.includes('Warrior')||op.opTypeName==='Aquilon Trooper')?total:['Scout Heavy Gunner','Aquilon Gunner'].includes(op.opTypeName)?2:1;
   if(count>max)errors.push(`${op.opTypeName} 최대 ${max}명`);
  }
  for(const [i,m] of r.members.entries()){const op=ops[i];if(!op){errors.push('알 수 없는 오퍼레이티브');continue;}
@@ -35,6 +38,11 @@ export function validate(r:Roster,t:Team):string[]{
   if(weapon&&r.members.filter(m=>m.loadout.includes(weapon.wepId)).length>1)errors.push(`${gun} 중화기 사수는 1명만 선택할 수 있습니다.`);
  }}
  if(t.killteamId==='IMP-DW'&&ops.filter(o=>o?.keywords.split(',').some(k=>k.trim()==='GRAVIS')).length>1)errors.push('GRAVIS 요원은 합계 최대 1명입니다.');
+ if(t.killteamId==='IMP-TEMPAQ'){
+  if(ops.filter(o=>o?.opTypeName==='Aquilon Servo-Sentry').length!==1)errors.push('서보 센트리를 정확히 1기 선택하세요.');
+  const gunner=t.opTypes.find(o=>o.opTypeName==='Aquilon Gunner');
+  for(const gun of ['Melta Carbine','Plasma Carbine']){const id=gunner?.weapons.find(w=>w.wepName===gun)?.wepId;if(id&&r.members.filter(m=>m.type===gunner?.opTypeId&&m.loadout.includes(id)).length>1)errors.push(`${gun} 거너는 각각 최대 1명입니다.`)}
+ }
  const maxEquipment=equipmentLimit(r,t);
  if(r.equipment.length>maxEquipment||new Set(r.equipment).size!==r.equipment.length)errors.push(`서로 다른 장비 최대 ${maxEquipment}개를 선택하세요.`);
  if(r.equipment.some(id=>!t.equipments.some(e=>e.eqId===id)))errors.push('알 수 없는 장비');
