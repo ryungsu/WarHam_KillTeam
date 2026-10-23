@@ -51,3 +51,5 @@
 .map-preview:has(.map-image-button){padding:12px;border:1px solid #a5693e;border-radius:10px;background:#211e1b}.map-preview-heading strong{font-size:14px}.map-preview-heading{align-items:center}.map-preview:has(.map-image-button)>a{display:inline-block;margin-top:8px}
 
 .community-map-credit{margin-top:10px;border-top:1px solid #765139;padding-top:8px;font-size:12px;line-height:1.6}.community-map-credit p{margin:4px 0}.community-map-credit>a{display:block;color:var(--accent);font-size:12px}
+
+.ploy-usage-card.is-active{border-color:#c98649;background:#34291f}.ploy-usage-card.is-active .ploy-rule-button{opacity:1}.ploy-state-badge{display:inline-block;border:1px solid #907050;border-radius:6px;padding:8px;color:#f0bd8a;font-weight:700;text-align:center;flex-shrink:0}

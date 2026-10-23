@@ -4,3 +4,5 @@ test('cancel preserves other ploys and does not mutate previous undo state',()=>
 
 import {confirmPloy} from './ployUsage.ts';
 test('confirmation deducts selected cost and rejects insufficient CP or duplicate use',()=>{assert.equal(confirmPloy(undefined,1,'a',0,1),null);const result=confirmPloy(undefined,1,'a',2,1)!;assert.equal(result.cp,1);assert.deepEqual(usedPloys(result.ployUsage,1),['a']);assert.equal(confirmPloy(result.ployUsage,1,'a',1,1),null);assert.equal(confirmPloy(undefined,1,'free',0,0)?.cp,0)});
+
+test("strategy use is shared across situations while other ploys and later turns cost separately",()=>{const first=confirmPloy(undefined,1,"strategy-a",3,1)!;assert.equal(confirmPloy(first.ployUsage,1,"strategy-a",first.cp,1),null);const other=confirmPloy(first.ployUsage,1,"strategy-b",first.cp,1)!;assert.equal(other.cp,1);const next=confirmPloy(other.ployUsage,2,"strategy-a",other.cp,1)!;assert.equal(next.cp,0);assert.deepEqual(usedPloys(next.ployUsage,1),["strategy-a","strategy-b"])});
