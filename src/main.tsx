@@ -38,12 +38,22 @@ function App(){
  useEffect(()=>{if(pendingCard&&(page==='roster'||page==='reference')){revealCard(`operative-${pendingCard}`);setPendingCard('')}},[pendingCard,page,tab]);
  const roster=rosters.find(r=>r.id===active),team=teams.find(t=>t.killteamId===(roster?.team??teamId)),op=team?.opTypes.find(o=>o.opTypeId===sheet),member=roster?.members.find(m=>m.id===sheet),shown=op??team?.opTypes.find(o=>o.opTypeId===member?.type);
  const n=(s:string)=>lang==='ko'?(names[s]??s):s;
- useEffect(()=>{fetch(`${base}data/teams.json`).then(r=>{if(!r.ok)throw Error('데이터를 읽을 수 없습니다.');return r.json()}).then((t:Team[])=>{setTeams(t);try{const raw=read('kt-rosters',[]);setRosters(parseBackup({version:1,rosters:raw},t))}catch{setError('저장된 로스터 형식을 읽지 못했습니다. 백업을 확인하세요.')}setLoaded(true)}).catch(e=>setError(String(e)));
+ useEffect(()=>{fetch(`${base}data/teams.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('데이터를 읽을 수 없습니다.');return r.json()}).then((t:Team[])=>{setTeams(t);try{const raw=read('kt-rosters',[]);setRosters(parseBackup({version:1,rosters:raw},t))}catch{setError('저장된 로스터 형식을 읽지 못했습니다. 백업을 확인하세요.')}setLoaded(true)}).catch(e=>setError(String(e)));
  const on=()=>setOffline(!navigator.onLine);window.addEventListener('online',on);window.addEventListener('offline',on);return()=>{window.removeEventListener('online',on);window.removeEventListener('offline',on)}},[]);
  useEffect(()=>{if(!loaded)return;try{localStorage.setItem('kt-rosters',JSON.stringify(rosters))}catch{setError('저장 공간이 부족하거나 브라우저 저장이 차단되었습니다. 백업을 내려받으세요.')}},[rosters,loaded]);
  useEffect(()=>{try{localStorage.setItem('kt-lang',JSON.stringify(lang))}catch{}},[lang]);
  useEffect(()=>{if(popup){dialog.current?.showModal()}else dialog.current?.close()},[popup]);
  useEffect(()=>{if('serviceWorker' in navigator&&import.meta.env.PROD)navigator.serviceWorker.register(`${base}sw.js`,{scope:base}).then(async()=>{await navigator.serviceWorker.ready;setCached(true)}).catch(()=>setNotice('오프라인 설치 실패 · 온라인 조회는 가능합니다.'))},[]);
+ useEffect(()=>{
+ if(!('serviceWorker' in navigator)||!import.meta.env.PROD)return;
+ let mounted=true;
+ const refreshData=()=>{
+  fetch(`${base}data/teams.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Team refresh failed');return r.json()}).then((t:Team[])=>{if(mounted)setTeams(t)}).catch(()=>{});
+  fetch(`${base}data/missions.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Mission refresh failed');return r.json()}).then(p=>{if(mounted)setMissionPack(p)}).catch(()=>{});
+ };
+ navigator.serviceWorker.addEventListener('controllerchange',refreshData);
+ return()=>{mounted=false;navigator.serviceWorker.removeEventListener('controllerchange',refreshData)};
+ },[]);
  const update=(patch:Partial<Roster>)=>{if(!roster)return;setRosters(rs=>rs.map(r=>r.id===roster.id?{...r,...patch,updated:new Date().toISOString()}:r))};
  const create=(t:Team)=>{const r:Roster={id:uuid(),name:`${n(t.killteamName)} · ${rosters.length+1}`,team:t.killteamId,members:[],equipment:[],tactics:[],updated:new Date().toISOString()};setRosters(rs=>[r,...rs]);rememberRoster(r.id);setActive(r.id);setPage('edit')};
  const open=(r:Roster,p='roster')=>{rememberRoster(r.id);setActive(r.id);setSheet('');setPage(p);setTeamId(r.team)};
