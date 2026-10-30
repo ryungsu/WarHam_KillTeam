@@ -57,3 +57,7 @@ pnpm build
 한국어 모드에서 등록된 영문 행동·명령·규칙 용어를 한국어 터치 링크로 표시합니다. 우측 하단 토스트는 직접 닫을 때까지 유지되며 원어와 출처를 제공합니다. 보관 버전은 `v0.1.0`, 브랜치는 `codex/release-v0.1.0`입니다. 이 보관 버전에는 규칙 토스트 추가 전 상태가 저장되어 있습니다.
 
 템페스투스 아퀼론 추가 검증: [docs/aquilons-audit.md](docs/aquilons-audit.md).
+
+## 보조 규칙 소스 (개발 브랜치)
+
+KillTeamCore를 `external/killteamcore` 서브모듈로 고정해 비교 자료로 사용합니다. `npm run reference:killteamcore`로 지원 팀 자료를 추출할 수 있습니다. 앱 데이터를 자동 변경하지 않습니다. 자세한 사용법은 [docs/secondary-source.md](docs/secondary-source.md)를 참조하세요.

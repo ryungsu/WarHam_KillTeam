@@ -1,0 +1,3 @@
+[submodule "external/killteamcore"]
+	path = external/killteamcore
+	url = https://github.com/KillTeamCore/killteamcore.github.io.git
