@@ -9,7 +9,7 @@ import {audit} from './checks.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 process.chdir(root);
 const read=path=>JSON.parse(readFileSync(pathResolve(root,path),'utf8'));
-const server=await createServer({root,server:{middlewareMode:true},logLevel:'error'});
+const server=await createServer({root,server:{middlewareMode:true},optimizeDeps:{noDiscovery:true,entries:[],include:[]},logLevel:'error'});
 try{
  const [{names,texts},{resolveRuleHint,ruleMentions},{teamRuleHints},{referenceAbilities},{teamSize},{CompactDatasheet},{default:Markdown},{TeamRuleScope},{TeamTacOps},{eligibleTac}]=await Promise.all([
   server.ssrLoadModule('/src/translations.ts'),server.ssrLoadModule('/src/ruleHints.ts'),server.ssrLoadModule('/src/teamRuleHints.ts'),server.ssrLoadModule('/src/teamAbilities.ts'),server.ssrLoadModule('/src/rules.ts'),server.ssrLoadModule('/src/CompactDatasheet.tsx'),server.ssrLoadModule('/src/RuleMarkdown.tsx'),server.ssrLoadModule('/src/TeamRuleScope.tsx'),server.ssrLoadModule('/src/TeamTacOps.tsx'),server.ssrLoadModule('/src/missions.ts'),
