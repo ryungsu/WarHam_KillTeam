@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {preserveStorage,rawStorage,recoveryKey} from './storageRecovery.ts';
+function memory(initial:Record<string,string>){const values=new Map(Object.entries(initial));return {get length(){return values.size},key:(i:number)=>[...values.keys()][i]??null,getItem:(k:string)=>values.get(k)??null,setItem:(k:string,v:string)=>{values.set(k,v)}}}
+test('preserves malformed roster, battles and sessions verbatim without touching originals',()=>{const s=memory({'kt-rosters':'{broken','kt-battles-v1':'[old]','kt-battle-a':'session','unrelated':'private'});const original=rawStorage(s);preserveStorage(s,'https://old.example');assert.deepEqual(JSON.parse(s.getItem(recoveryKey)!).entries,original);assert.deepEqual(rawStorage(s),original);assert.equal(JSON.parse(s.getItem(recoveryKey)!).entries.unrelated,undefined)});
+test('first recovery snapshot survives subsequent empty saves',()=>{const s=memory({'kt-rosters':'[original]'});preserveStorage(s,'https://old.example');const first=s.getItem(recoveryKey);s.setItem('kt-rosters','[]');preserveStorage(s,'https://new.example');assert.equal(s.getItem(recoveryKey),first)});
+test('empty or language-only browser does not create a misleading recovery snapshot',()=>{const s=memory({'kt-lang':'"ko"'});preserveStorage(s,'https://new.example');assert.equal(s.getItem(recoveryKey),null)});
