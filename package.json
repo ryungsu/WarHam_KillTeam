@@ -7,8 +7,10 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build && node scripts/build-sw.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node --experimental-strip-types --test src/rules.test.ts src/missions.test.ts src/ruleHints.test.ts src/searchRanking.test.ts src/forwardScouting.test.ts src/ployUsage.test.ts scripts/secondary-source.test.mjs",
-    "reference:killteamcore": "node scripts/secondary-source.mjs"
+    "test": "node --experimental-strip-types --test src/rules.test.ts src/missions.test.ts src/ruleHints.test.ts src/searchRanking.test.ts src/forwardScouting.test.ts src/ployUsage.test.ts scripts/secondary-source.test.mjs src/newTeams.test.ts",
+    "reference:killteamcore": "node scripts/secondary-source.mjs",
+    "quality": "node scripts/quality/run.mjs",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

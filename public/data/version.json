@@ -4,5 +4,14 @@
   "downloaded": "2026-10-14",
   "sha256": "2dd5eb768bf3eb796c8f33ff91a837fde1b31ec98fcbaea8aec4483ab3a65c5c",
   "source": "https://github.com/vjosset/killteamjson",
+  "teamRuleOverrides": {
+    "reviewed": "2026-11-02",
+    "officialUpdated": "2026-10-28",
+    "sources": {
+      "CHAOS-PM": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+      "CHAOS-NC": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+      "TYR-RAV": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf"
+    }
+  },
   "note": "Community snapshot, not a claim of latest official balance parity."
 }

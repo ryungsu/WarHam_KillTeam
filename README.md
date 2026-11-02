@@ -20,7 +20,7 @@ pnpm build
 
 ## 기능
 
-- Angels of Death·Scout Squad·Deathwatch·Tempestus Aquilon 로스터 생성·편집·편성 검증
+- Angels of Death·Scout Squad·Deathwatch·Tempestus Aquilon·Plague Marines·Nemesis Claw·Raveners 로스터 생성·편집·편성 검증
 - 편집 화면의 손잡이 드래그·터치 또는 위/아래 버튼으로 요원 순서 변경 및 저장
 - 이미지·선택 무장·능력이 포함된 펼침형 데이터시트와 스크롤 네비게이터
 - 빠른 검색 패널 및 한국어·영어 전환
@@ -58,6 +58,16 @@ pnpm build
 
 템페스투스 아퀼론 추가 검증: [docs/aquilons-audit.md](docs/aquilons-audit.md).
 
-## 보조 규칙 소스 (개발 브랜치)
+## 보조 규칙 소스
 
 KillTeamCore를 `external/killteamcore` 서브모듈로 고정해 비교 자료로 사용합니다. `npm run reference:killteamcore`로 지원 팀 자료를 추출할 수 있습니다. 앱 데이터를 자동 변경하지 않습니다. 자세한 사용법은 [docs/secondary-source.md](docs/secondary-source.md)를 참조하세요.
+
+추가 3팀 검증: [docs/new-teams-2026-11.md](docs/new-teams-2026-11.md). 2026-11-02 서비스 릴리즈에 포함합니다.
+
+## 반복 검수
+
+새 팩션·키워드 변경 후 `pnpm verify`(또는 `node scripts/verify.mjs`)로 회귀 테스트·데이터/링크/이미지 하네스·타입·빌드를 한 번에 검사합니다. GitHub Actions에도 동일 검증을 연결했습니다. 이미지 원문 재검증 및 새 팀 등록 절차는 [docs/quality-harness.md](docs/quality-harness.md)를 참조하세요.
+
+## 서비스 릴리즈 · 2026-11-02
+
+태그 `release-2026-11-02`: 신규 3팀, 이미지 매칭 정정, 규칙 링크·약어, 래버너 능력 표시, 전투 기록 삭제, Tac Op 분류 및 팀별 참고 탭, 반복 검수 하네스를 포함합니다. 이전 안정 기준은 `stable-2026-10-30` 태그로 보관합니다. 검증 범위·제한은 [docs/quality-harness.md](docs/quality-harness.md)에 기록합니다.

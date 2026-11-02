@@ -1,6 +1,6 @@
 import {weaponRules} from './weaponRules.ts';
 export const coreSource='https://assets.warhammer-community.com/eng_jun25_kt_lite_rules-5yqs3aeeud-r6homxqjvf.pdf';
-export type RuleHint={english?:string;englishKind?:'original'|'summary';id:string;en:string;ko:string;body:string;source?:string};
+export type RuleHint={aliases?:string[];preserveLabel?:boolean;related?:RuleHint[];english?:string;englishKind?:'original'|'summary';id:string;en:string;ko:string;body:string;source?:string};
 export const ruleHints:RuleHint[]=[
 {id:'stun-grenade',en:'Stun Grenade',ko:'섬광 수류탄',body:'1AP. 보이고 6인치 이내인 적 하나를 선택합니다. 그 적과 주변 1인치 이내 모든 요원은 각각 D6을 굴립니다. 3+이면 다음 활성화 종료까지 APL을 1 줄입니다. 적 통제 범위 안이나 장비로 얻은 사용 횟수를 모두 소비했다면 수행할 수 없습니다. 스카웃 워리어의 적응형 장비는 별도 횟수 규칙을 따릅니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
 {id:'smoke-grenade',en:'Smoke Grenade',ko:'연막 수류탄',body:'1AP. 6인치 이내에 보이는 위치, 또는 보이는 지형의 고지에 연막 마커를 놓습니다. 수평 1인치·위로 무제한인 연막을 만듭니다. 연막 안에 완전히 있는 요원과 2인치 초과 떨어진 요원은 서로 시야 방해 상태입니다. 연막 안 표적에게 관통 2·치명 관통 2는 각각 1이 됩니다(서로 2인치 이내 제외). 다음 전략 단계 준비에 D3을 굴려 그 수의 활성화 후 또는 TP 종료 중 먼저 오는 때 제거합니다. 적 통제 범위 안이나 사용 횟수 소진 시 수행할 수 없습니다.',source:'https://www.warhammer-community.com/en-gb/downloads/kill-team/'},
@@ -34,7 +34,8 @@ export const emitRuleHint=(hint:RuleHint)=>window.dispatchEvent(new CustomEvent(
 
 export function translateRuleName(text:string,korean=true){if(!korean)return text;const labels:Record<string,string>={'Piercing Crits':'치명 관통','Heavy':'중화기','Balanced':'균형','Brutal':'잔혹','Ceaseless':'끊임없는 공격','Relentless':'무자비','Lethal':'치명적','Piercing':'관통','Rending':'분쇄','Saturate':'엄폐 무시','Silent':'소음 억제','Devastating':'파괴적','Range':'사거리','Blast':'폭발','Torrent':'분사','Shock':'충격','Stun':'기절','Hot':'과열','Seek Light':'경량 탐색','Seek':'탐색','Accurate':'정확','Rng':'사거리','PrcCrit':'치명 관통','Prc':'관통','Hvy':'중화기','Dev':'파괴적','Tor':'분사','Sat':'엄폐 무시','Dash':'대시'};let output=text;for(const key of Object.keys(labels).sort((a,b)=>b.length-a.length))output=output.replace(new RegExp('\\b'+key+'\\b','gi'),labels[key]);return output}
 
-export function resolveRuleHint(text:string):RuleHint|undefined {
+export function resolveRuleHint(text:string,extra:RuleHint[]=[]):RuleHint|undefined {
+ const custom=extra.find(h=>[h.en,h.ko,...(h.aliases??[])].some(a=>a.toLowerCase()===text.toLowerCase()));if(custom)return custom;
  const core=ruleHints.find(h=>[h.en,h.ko].some(v=>v.toLowerCase()===text.toLowerCase()));
  if(core&&!['balanced','ceaseless','seek','seek-light'].includes(core.id))return core;
  const weapon=weaponRules.find(w=>w.re.test(text));
@@ -44,11 +45,11 @@ export function resolveRuleHint(text:string):RuleHint|undefined {
  return core;
 }
 export type RuleMention={start:number;end:number;text:string;hint:RuleHint;weapon:boolean};
-export function ruleMentions(text:string):RuleMention[]{
+export function ruleMentions(text:string,extra:RuleHint[]=[]):RuleMention[]{
  const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
- const aliases=ruleHints.flatMap(h=>[h.en,h.ko]).sort((a,b)=>b.length-a.length).map(escape);
- const numeric='(?:Lethal\\s+\\d+\\+|(?:Piercing Crits|Piercing|Devastating|Blast|Torrent|Range|Rng|PrcCrit|Prc|Dev|Tor)\\s*\\d+(?:["″])?|(?:Heavy|Hvy)\\s*\\([^)]*\\))';
- const plain='Lethal|Piercing Crits|Piercing|Rending|Relentless|Saturate|Silent|Devastating|Blast|Torrent|Shock|Stun|Hot|Heavy|Range|Balanced|Ceaseless|Seek Light|Seek';
+ const aliases=[...extra,...ruleHints].flatMap(h=>[h.en,h.ko,...(h.aliases??[])]).sort((a,b)=>b.length-a.length).map(escape);
+ const numeric='(?:(?:Limited|Lim)\\s*\\d+|Lethal\\s+\\d+\\+|(?:Piercing Crits|Piercing|Devastating|Blast|Torrent|Range|Rng|PrcCrit|Prc|Dev|Tor)\\s*\\d+(?:["″])?|(?:Heavy|Hvy)\\s*\\([^)]*\\))';
+ const plain=[...new Set([...weaponRules.map(w=>w.name.split(' · ')[0].replace(/ X\+?$/, '')), 'Limited','Hvy','Rnd','Rend','Sat','Sil'])].sort((a,b)=>b.length-a.length).map(escape).join('|');
  const regex=new RegExp(numeric+'|'+aliases.join('|')+'|'+plain,'gi');const result:RuleMention[]=[];
- for(const m of text.matchAll(regex)){const start=m.index!,word=m[0];if(/[A-Za-z]/.test(word[0])&&(/[A-Za-z]/.test(text[start-1]??'')||/[A-Za-z]/.test(text[start+word.length]??'')))continue;const hint=resolveRuleHint(word);if(hint)result.push({start,end:start+word.length,text:word,hint,weapon:hint.id.startsWith('weapon-')})}return result;
+ for(const m of text.matchAll(regex)){const start=m.index!,word=m[0];if(/[A-Za-z]/.test(word[0])&&(/[A-Za-z]/.test(text[start-1]??'')||/[A-Za-z]/.test(text[start+word.length]??'')))continue;const hint=resolveRuleHint(word,extra);if(hint)result.push({start,end:start+word.length,text:word,hint,weapon:!!hint.preserveLabel||hint.id.startsWith('weapon-')})}return result;
 }

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "teams": {
+    "IMP-AOD": {"size":6,"factionAbilities":["Astartes"]},
+    "IMP-DW": {"size":5,"factionAbilities":["Veteran Astartes","Special Issue Ammunition"]},
+    "IMP-SCT": {"size":9,"factionAbilities":["Astartes","Forward Scouting"]},
+    "IMP-TEMPAQ": {"size":11,"factionAbilities":["Drop Insertion","Grav Chute"]},
+    "CHAOS-PM": {"size":6,"factionAbilities":["Astartes","*Poison","Disgustingly Resilient"],"portraitProof":true},
+    "CHAOS-NC": {"size":6,"factionAbilities":["Astartes","In Midnight Clad"],"portraitProof":true},
+    "TYR-RAV": {"size":5,"factionAbilities":["Burrow","Tunnel","Predatory Instincts"],"portraitProof":true}
+  },
+  "inlineFixtures":["Severe","Lim1","Hvy(Repos)","Rnd","Tor2\"","Sil","Rend","Psychic"],
+  "scopedFixtures":{
+    "CHAOS-PM":["Disgustingly Resilient","Poison","Toxic","역겨운 저항력","중독"],
+    "TYR-RAV":["Poison","Burrow","Tunnel"]
+  }
+}

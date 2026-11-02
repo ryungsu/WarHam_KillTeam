@@ -1,0 +1,19 @@
+{
+  "reviewed": "2026-11-02",
+  "officialUpdated": "2026-10-28",
+  "sources": {
+    "CHAOS-PM": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "CHAOS-NC": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "TYR-RAV": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf"
+  },
+  "abilities": {
+    "CHAOS-PM-CHAMP-A-TOX": "Whenever this operative is using this weapon against an enemy operative that had one of your Poison tokens at the start of that action, add 1 to both Dmg stats of this weapon. For the Bombardier's blight grenades, only change the Damage stat against those operatives, not other Blast targets.",
+    "CHAOS-NC-VEN-DCM": "PSYCHIC. Select one enemy operative within 6\" of this operative, then select one option (each option once per battle): subtract 1 from its APL until the end of its next activation; change its order; or perform a free Dash with it, specifying the destination. Do not apply your opponent's rules to that Dash. This operative cannot perform this action within control range of an enemy operative.",
+    "TYR-RAV-FTL-TL": "Select one enemy operative visible to and within 2\" of this operative. If enemy operatives are within control range of this operative, you cannot select an enemy operative that isn't. Alternatively, if this operative is underground, select one enemy operative on your TUNNEL. Inflict D3+2 damage and give it one of your Poison tokens if it doesn't already have one. This action can be performed underground, taking precedence over Burrow rules.",
+    "CHAOS-NC-FRM-PO": "Select one objective marker this operative controls to gain one of your Terrorchem tokens.\nIt cannot be an objective marker within control range of an enemy operative, or one that already has one of your Terrorchem tokens.\nThe first time that objective marker is contested by an enemy operative that does not have one of your Terrorchem tokens, that operative gains that Terrorchem token, then inflicts 2D3 damage on it\n(if it is during an action, at the end of that action). This operative cannot perform this action while within control range of an enemy operative."
+  },
+  "ploys": {
+    "CHAOS-NC-S-TBH": "Whenever a friendly NEMESIS CLAW operative is shooting against, fighting against or retaliating against an enemy operative that was wounded at the start of the action, you can re-roll one of your attack dice.",
+    "CHAOS-NC-T-VS": "Use this firefight ploy when your opponent would activate an enemy operative that is visible to a friendly NEMESIS CLAW operative. Roll one D6; if the result is higher than that enemy operative's APL stat, your opponent cannot activate it during this activation; if the result is less than or equal to that enemy operative's APL stat, this ploy is not used, the CP spent on it is refunded and you cannot use this ploy again during this turning point. If there are no other enemy operatives eligible to be activated, this ploy has no effect. This ploy costs you 1 additional CP for each previous time you have used it during the battle (1CP the first time, 2CP the second time, etc.)."
+  }
+}

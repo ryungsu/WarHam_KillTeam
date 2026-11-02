@@ -15,7 +15,7 @@ git submodule update --init --depth 1 external/killteamcore
 npm run reference:killteamcore
 ```
 
-4개 지원 팀의 능력·플로이·장비·진영 규칙·무기 표를 `tmp/secondary-source/killteamcore.json`으로 추출한다. 팀마다 원본 경로·고정 커밋·SHA-256을 남긴다. 이 비교 자료는 Git 및 사이트 빌드에 포함하지 않는다. 추출기는 사람이 검토하기 위한 HTML 구조 기반 도구이며 자동 규칙 변환기가 아니다.
+7개 지원 팀의 능력·플로이·장비·진영 규칙·무기 표를 `tmp/secondary-source/killteamcore.json`으로 추출한다. 팀마다 원본 경로·고정 커밋·SHA-256을 남긴다. 이 비교 자료는 Git 및 사이트 빌드에 포함하지 않는다. 추출기는 사람이 검토하기 위한 HTML 구조 기반 도구이며 자동 규칙 변환기가 아니다.
 
 ## 다음 업데이트
 
@@ -29,4 +29,4 @@ npm run reference:killteamcore
 
 서브모듈은 `.gitmodules`와 Git 포인터로만 관리한다. 앱 배포 체크아웃으로 소스를 복사할 때 `external/killteamcore` Git 링크는 건너뛴다. 빌드에 외부 저장소나 네트워크가 필요하지 않다. GitHub Actions에서도 재귀 checkout은 필요 없다.
 
-이번 브랜치는 연결·비교 도구 준비 단계다. 공식 규칙 최신화 및 공개 사이트 배포는 아직 수행하지 않았다.
+초기 브랜치는 연결·비교 도구 준비 단계였으며, 이후 신규 3팀 및 검수 하네스를 추가했다. 서비스 릴리즈 기준은 release-2026-11-02 태그다. 기존 모든 팀과 공통 규칙 전체의 최신 패치 반영을 의미하지 않는다.

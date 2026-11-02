@@ -7,6 +7,10 @@ export function loadouts(op:Operative):string[][] {
  else if(n==='intercessor sergeant') sets=rifle.flatMap(r=>melee.map(m=>[r,m]));
  else if(n==='intercessor gunner') sets=rifle.map(r=>[r,'Auxiliary Grenade Launcher','Fists']);
  else if(n==='intercessor warrior') sets=rifle.map(r=>[r,'Fists']);
+ else if(n==='night lord visionary') sets=[...['Power Fist','Power Maul','Power Weapon'].map(w=>['Bolt Pistol',w]),['Plasma Pistol','Nostraman Chainblade']];
+ else if(n==='night lord gunner') sets=['Flamer','Meltagun','Plasma Gun'].map(w=>['Bolt Pistol',w,'Fists']);
+ else if(n==='night lord heavy gunner') sets=['Heavy Bolter','Missile Launcher'].map(w=>['Bolt Pistol',w,'Fists']);
+ else if(n==='night lord warrior') sets=[['Bolt Pistol','Chainsword'],['Boltgun','Fists']];
  else if(n==='aquilon tempestor') sets=[['Hot-Shot Laspistol','Power Weapon'],['Relic Bolt Pistol','Chainsword'],['Hot-Shot Lascarbine','Fists']];
  else if(n==='aquilon gunner') sets=[['Melta Carbine','Fists'],['Plasma Carbine','Fists']];
  else if(n==='aquilon servo-sentry') sets=[['Flamer'],['Grenade Launcher'],['Hot-Shot Volley Gun']];
@@ -17,7 +21,7 @@ export function loadouts(op:Operative):string[][] {
  return sets.map(s=>s.map(n=>{const w=op.weapons.find(w=>w.wepName.toLowerCase()===n.toLowerCase());if(!w)throw new Error(`Missing weapon ${op.opTypeId}: ${n}`);return w.wepId}));
 }
 export const isLeader=(op:Operative)=>op.keywords.split(',').some(k=>k.trim()==='LEADER');
-export const teamSize=(t:Team)=>t.killteamId==='IMP-TEMPAQ'?11:t.killteamId==='IMP-DW'?5:t.killteamId==='IMP-AOD'?6:9;
+export const teamSize=(t:Team)=>t.killteamId==='IMP-TEMPAQ'?11:['IMP-DW','TYR-RAV'].includes(t.killteamId)?5:['CHAOS-PM','CHAOS-NC'].includes(t.killteamId)?6:t.killteamId==='IMP-AOD'?6:9;
 export const equipmentLimit=(r:Roster,t:Team)=>4+(r.members.some(m=>t.opTypes.find(o=>o.opTypeId===m.type)?.abilities.some(a=>a.abilityName==='Adaptable Armoury'))?1:0);
 export function validate(r:Roster,t:Team):string[]{
  const errors:string[]=[];const total=teamSize(t);
@@ -25,7 +29,7 @@ export function validate(r:Roster,t:Team):string[]{
  const ops=r.members.map(m=>t.opTypes.find(o=>o.opTypeId===m.type));
  if(t.killteamId!=='IMP-DW'&&ops.filter(o=>o&&isLeader(o)).length!==1)errors.push('리더를 정확히 1명 선택하세요.');
  for(const op of t.opTypes){const count=ops.filter(o=>o?.opTypeId===op.opTypeId).length;
-  const max=(op.opTypeName.includes('Warrior')||op.opTypeName==='Aquilon Trooper')?total:['Scout Heavy Gunner','Aquilon Gunner'].includes(op.opTypeName)?2:1;
+  const max=((op.opTypeName.includes('Warrior')&&t.killteamId!=='CHAOS-PM')||op.opTypeName==='Aquilon Trooper')?total:['Scout Heavy Gunner','Aquilon Gunner'].includes(op.opTypeName)?2:1;
   if(count>max)errors.push(`${op.opTypeName} 최대 ${max}명`);
  }
  for(const [i,m] of r.members.entries()){const op=ops[i];if(!op){errors.push('알 수 없는 오퍼레이티브');continue;}

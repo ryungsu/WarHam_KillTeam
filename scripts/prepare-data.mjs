@@ -1,10 +1,13 @@
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const raw=readFileSync(new URL('../data-original/upstream.json',import.meta.url),'utf8');
-const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT','IMP-DW','IMP-TEMPAQ'].includes(t.killteamId));
+const teams=JSON.parse(raw).filter(t=>['IMP-AOD','IMP-SCT','IMP-DW','IMP-TEMPAQ','CHAOS-PM','CHAOS-NC','TYR-RAV'].includes(t.killteamId));
 mkdirSync(new URL('../data-original/',import.meta.url),{recursive:true});
 writeFileSync(new URL('../data-original/teams.json',import.meta.url),JSON.stringify(teams,null,2));
+const overrides=JSON.parse(readFileSync(new URL('../data-original/new-team-overrides.json',import.meta.url),'utf8'));
 for(const t of teams){
+ for(const o of t.opTypes){if(t.killteamId==='TYR-RAV')o.WOUNDS=o.opTypeId==='TYR-RAV-PRM'?19:18;for(const a of o.abilities){if(t.killteamId==='CHAOS-PM'&&a.abilityName==='*Toxic')a.description=overrides.abilities['CHAOS-PM-CHAMP-A-TOX'];if(t.killteamId==='TYR-RAV'&&['Burrow','Tunnel','Predatory Instincts'].includes(a.abilityName))a.isFactionRule=true;if(overrides.abilities[a.abilityId])a.description=overrides.abilities[a.abilityId];}for(const w of o.weapons)if(w.wepName==='Venom Blast'&&t.killteamId==='TYR-RAV')w.wepName='Venom Bolt'}
+ for(const p of t.ploys)if(overrides.ploys[p.ployId])p.description=overrides.ploys[p.ployId];
  if(t.killteamId==='IMP-TEMPAQ'){
   // Official datacards clarify Salvo targeting; keep upstream English in data-original.
   const salvo=t.opTypes.flatMap(o=>o.abilities).find(a=>a.abilityName==='*Salvo');
@@ -22,4 +25,4 @@ for(const t of teams){
  }
 }
 writeFileSync(new URL('../public/data/teams.json',import.meta.url),JSON.stringify(teams,null,2));
-writeFileSync(new URL('../public/data/version.json',import.meta.url),JSON.stringify({edition:'Kill Team 2024',file:'kt24_v4.json',downloaded:'2026-10-14',sha256:createHash('sha256').update(raw).digest('hex'),source:'https://github.com/vjosset/killteamjson',note:'Community snapshot, not a claim of latest official balance parity.'},null,2));
+writeFileSync(new URL('../public/data/version.json',import.meta.url),JSON.stringify({edition:'Kill Team 2024',file:'kt24_v4.json',downloaded:'2026-10-14',sha256:createHash('sha256').update(raw).digest('hex'),source:'https://github.com/vjosset/killteamjson',teamRuleOverrides:{reviewed:overrides.reviewed,officialUpdated:overrides.officialUpdated,sources:overrides.sources},note:'Community snapshot, not a claim of latest official balance parity.'},null,2));

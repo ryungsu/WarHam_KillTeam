@@ -55,3 +55,11 @@
 .ploy-usage-card.is-active{border-color:#c98649;background:#34291f}.ploy-usage-card.is-active .ploy-rule-button{opacity:1}.ploy-state-badge{display:inline-block;border:1px solid #907050;border-radius:6px;padding:8px;color:#f0bd8a;font-weight:700;text-align:center;flex-shrink:0}
 
 .battle-tac-op{margin:0 0 14px;border-top:3px solid var(--orange)}.battle-tac-op .heading{flex-wrap:wrap;gap:6px}.battle-tac-summary{display:grid;gap:5px;margin:8px 0}.battle-tac-summary>strong{color:var(--accent);font-size:18px}.battle-tac-summary>small,.battle-tac-summary>span{font-size:12px;color:var(--muted)}.tac-current-rules{margin:12px 0;border-block:1px solid var(--line);padding:12px 0}.tac-current-rules>summary{font-weight:700;color:var(--accent);min-height:32px}.battle-tac-actions{display:flex;flex-wrap:wrap;gap:10px}.battle-tac-actions button{min-height:44px}.battle-tac-op .tac-op-picker{margin-top:14px}
+
+.battle-list-item{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#242424}.battle-list-item>.battle-list-card{width:100%;flex:1;border-radius:0;border-bottom:0}.battle-list-actions{display:flex;justify-content:flex-end;padding:8px 12px;border-top:1px solid var(--line)}.battle-list-actions button{min-height:44px;padding:8px 16px}
+
+.team-ability-entry+.team-ability-entry{margin-top:16px;padding-top:14px;border-top:2px solid #87583a}.team-ability-entry h3 small{font-size:12px;color:var(--muted)}
+
+.tac-archetype-badge{display:inline-block!important;width:fit-content;padding:4px 8px;margin-top:5px;border:1px solid #b97c45;border-radius:5px;background:#392a1e;color:#f5bd88!important;font-size:12px!important;font-weight:700}.mission-card>summary .tac-archetype-badge{display:block!important}.tac-archetype-group{margin:22px 0}.tac-archetype-group>h3{padding:9px 0;border-bottom:2px solid var(--orange);color:var(--accent)}
+
+.team-tac-archetypes{display:flex;flex-wrap:wrap;gap:8px}.team-tac-english{display:block;color:var(--muted);font-size:12px;margin-top:5px}.team-tac-ops h2 small{font-size:14px;color:var(--muted)}

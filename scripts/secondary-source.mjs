@@ -7,6 +7,7 @@ import {resolve} from 'node:path';
 export const supportedSources=[
  ['IMP-AOD','angels-of-death'],['IMP-SCT','scout-squad'],
  ['IMP-DW','deathwatch'],['IMP-TEMPAQ','tempestus-aquilons'],
+ ['CHAOS-PM','plague-marines'],['CHAOS-NC','nemesis-claw'],['TYR-RAV','raveners'],
 ];
 export function plainText(html){
  return html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,'')

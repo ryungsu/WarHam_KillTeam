@@ -13,4 +13,4 @@ self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
 event.respondWith(caches.open(CACHE).then(async cache=>{if(event.request.mode==='navigate'){try{return await fetch(event.request)}catch{return await cache.match(new URL('./index.html',self.registration.scope))}}
 if(new URL(event.request.url).pathname.startsWith(new URL('data/',self.registration.scope).pathname)){try{const response=await fetch(event.request,{cache:'no-store'});if(!response.ok)throw new Error('Data fetch failed');await cache.put(event.request,response.clone());return response}catch(error){const saved=await cache.match(event.request);if(saved)return saved;throw error}}
-return await cache.match(event.request)||fetch(event.request)}))});`);
+return await cache.match(event.request,{ignoreSearch:new URL(event.request.url).pathname.includes('/images/')})||fetch(event.request)}))});`);

@@ -1,0 +1,233 @@
+[
+  {
+    "id": "CHAOS-PM-BOMB",
+    "page": 1,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE BOMBARDIER",
+    "titleY": 597.93,
+    "imageY": 585.04,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "13b4f04031afc78e1c9676275b80bb06fcb3e4e5c76237e05208f26e0565e9c0"
+  },
+  {
+    "id": "CHAOS-PM-HGNR",
+    "page": 1,
+    "pdfImage": "Im15.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE HEAVY GUNNER",
+    "titleY": 201.07,
+    "imageY": 188.23,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "8c6d096e36a3ea03bd30d5c159f4a5bf2932686454edf63d7ed129849d8f7014"
+  },
+  {
+    "id": "CHAOS-PM-CHAMP",
+    "page": 1,
+    "pdfImage": "Im23.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE CHAMPION",
+    "titleY": 796.35,
+    "imageY": 783.5,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "1660b40ba7167e64f53d7c4d7a0a529d69d88d923325ebab0c552738a8783951"
+  },
+  {
+    "id": "CHAOS-PM-FTR",
+    "page": 1,
+    "pdfImage": "Im31.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE FIGHTER",
+    "titleY": 399.5,
+    "imageY": 386.58,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "e9027004572cafadaacdedb02b2c03aa084462ce8b36909485faaa33072976b2"
+  },
+  {
+    "id": "CHAOS-PM-MAL",
+    "page": 2,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "MALIGNANT PLAGUECASTER",
+    "titleY": 597.93,
+    "imageY": 585.05,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "b79a7855db629e7d5e464483dde00621149e57435c115b5cc9ffb2b6471addd6"
+  },
+  {
+    "id": "CHAOS-PM-WAR",
+    "page": 2,
+    "pdfImage": "Im15.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE WARRIOR",
+    "titleY": 201.07,
+    "imageY": 169.19,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "489980d5b7edce558604607806c5399c8897ab43d530933a5122157b20e87cf7"
+  },
+  {
+    "id": "CHAOS-PM-IB",
+    "page": 2,
+    "pdfImage": "Im23.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_plague_marines-g24es2y2sf-w099ltpkoa.pdf",
+    "matchedTitle": "PLAGUE MARINE ICON BEARER",
+    "titleY": 796.35,
+    "imageY": 783.5,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "111fce353c76369cf2273e6cf5cf7add81faad95305ab6b28e80e6c681cfc506"
+  },
+  {
+    "id": "CHAOS-NC-VIS",
+    "page": 1,
+    "pdfImage": "Im6.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD VISIONARY",
+    "titleY": 597.93,
+    "imageY": 584.98,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "8bd25ad9c83f6d7a5249d98d59e6a164b5ab11e890809bf553fc1804f070df2f"
+  },
+  {
+    "id": "CHAOS-NC-FRM",
+    "page": 1,
+    "pdfImage": "Im13.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD FEARMONGER",
+    "titleY": 201.07,
+    "imageY": 188.12,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "1d03749f3803a534079d30832cdd788bedf9ca85ac8dba52b6aa7a5516f056f9"
+  },
+  {
+    "id": "CHAOS-NC-HGNR",
+    "page": 2,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD HEAVY GUNNER",
+    "titleY": 597.93,
+    "imageY": 585.02,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "1d1460e2b456521f5e59ab0ec26e6d2f3fda63ba9d77b95d531dafe7ae75dfb5"
+  },
+  {
+    "id": "CHAOS-NC-SKT",
+    "page": 2,
+    "pdfImage": "Im15.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD SKINTHIEF",
+    "titleY": 201.07,
+    "imageY": 188.22,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "02add8ee89a3ae092f3e033378487e9f09ca23201e018c2db9d71662a9ae83d4"
+  },
+  {
+    "id": "CHAOS-NC-GNR",
+    "page": 2,
+    "pdfImage": "Im23.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD GUNNER",
+    "titleY": 796.35,
+    "imageY": 772.92,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "93f77224873dd151807e642a0badef4479b6f4d465b6ecc0e1d473ebe82996c6"
+  },
+  {
+    "id": "CHAOS-NC-SCR",
+    "page": 2,
+    "pdfImage": "Im31.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD SCREECHER",
+    "titleY": 399.5,
+    "imageY": 385.78,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "b9dc71069272b4d99b33db31a2a4b8a5047527e15f8dc8d2832cb6a012f5d75a"
+  },
+  {
+    "id": "CHAOS-NC-WAR",
+    "page": 3,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD WARRIOR",
+    "titleY": 597.93,
+    "imageY": 585.05,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "8e1e35bd2464a523d704bdc6aefe04762891b40637bcc25ff9ca0cfaccd80187"
+  },
+  {
+    "id": "CHAOS-NC-VEN",
+    "page": 3,
+    "pdfImage": "Im16.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_nemesis_claw-ybccnd9qcw-2c6utdqxa5.pdf",
+    "matchedTitle": "NIGHT LORD VENTRILOKAR",
+    "titleY": 796.35,
+    "imageY": 783.43,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "ee7a151f60beacd2a4033f6a91b6ba67b473690541489d730ee19f49368d101d"
+  },
+  {
+    "id": "TYR-RAV-FTL",
+    "page": 1,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER FELLTALON",
+    "titleY": 597.93,
+    "imageY": 585.07,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "24249d40beaa119595d4177cf8ac5e7fc09d96b0887f5e14cb487f5d0068f07d"
+  },
+  {
+    "id": "TYR-RAV-TRS",
+    "page": 1,
+    "pdfImage": "Im15.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER TREMORSCYTHE",
+    "titleY": 201.07,
+    "imageY": 188.18,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "c5fc80458add2229f3b9818155cb982eee9018ce9859768e8d2db4954f9c2ffe"
+  },
+  {
+    "id": "TYR-RAV-PRM",
+    "page": 1,
+    "pdfImage": "Im23.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER PRIME",
+    "titleY": 796.35,
+    "imageY": 783.46,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "2c8c59290d75fc42c0aad922f78e5afe1d612e38f0b210bac23e570c89eefb23"
+  },
+  {
+    "id": "TYR-RAV-WAR",
+    "page": 2,
+    "pdfImage": "Im7.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER WARRIOR",
+    "titleY": 597.93,
+    "imageY": 584.96,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "e55f432e4143580550b03ebc32110999041fe79ad9c05b2600396c2733d5228b"
+  },
+  {
+    "id": "TYR-RAV-VSP",
+    "page": 2,
+    "pdfImage": "Im16.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER VENOMSPITTER",
+    "titleY": 796.35,
+    "imageY": 783.48,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "c8f4688339618dc72fc7b352e59722a447b8c65e4a582ae86df406b7e7f978f4"
+  },
+  {
+    "id": "TYR-RAV-WRK",
+    "page": 2,
+    "pdfImage": "Im24.jp2",
+    "source": "https://assets.warhammer-community.com/eng_28-10_kill_team_team_rules_raveners-h8bosc0ksi-2kdh46uw2b.pdf",
+    "matchedTitle": "RAVENER WRECKER",
+    "titleY": 399.5,
+    "imageY": 386.56,
+    "mappingMethod": "same PDF card header coordinates",
+    "sha256": "b5823ef4cb5350c9d4643194bdc83f7f6ee4d091d76ee726ad781588ea20f2bc"
+  }
+]

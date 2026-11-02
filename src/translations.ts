@@ -1,3 +1,4 @@
+import {expansionNames,expansionTexts} from './expansionTranslations';
 import {aquilonNames,aquilonTexts} from './aquilonTranslations';
 export const names:Record<string,string>={
 'Angels Of Death':'죽음의 천사','Scout Squad':'스카웃 스쿼드','Space Marine Captain':'스페이스 마린 캡틴','Assault Intercessor Sergeant':'어썰트 인터세서 서전트','Intercessor Sergeant':'인터세서 서전트','Eliminator Sniper':'엘리미네이터 스나이퍼','Assault Intercessor Grenadier':'어썰트 인터세서 그레네디어','Assault Intercessor Warrior':'어썰트 인터세서 워리어','Heavy Intercessor Gunner':'헤비 인터세서 거너','Intercessor Gunner':'인터세서 거너','Intercessor Warrior':'인터세서 워리어','Scout Sergeant':'스카웃 서전트','Scout Heavy Gunner':'스카웃 헤비 거너','Scout Hunter':'스카웃 헌터','Scout Sniper':'스카웃 스나이퍼','Scout Tracker':'스카웃 트래커','Scout Warrior':'스카웃 워리어',
@@ -113,3 +114,6 @@ Object.assign(texts,{
 
 Object.assign(names,aquilonNames);
 Object.assign(texts,aquilonTexts);
+
+Object.assign(names,expansionNames);
+Object.assign(texts,expansionTexts);
